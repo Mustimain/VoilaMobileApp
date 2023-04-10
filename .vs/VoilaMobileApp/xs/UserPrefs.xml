@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{B29D5037-E262-4D86-A122-839E942CF06F}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/Views/RegisterPage.xaml">
+    <Files>
+      <File FileName="VoilaMobileApp/MauiProgram.cs" Line="11" Column="47" />
+      <File FileName="VoilaMobileApp/MainPage.xaml" Line="5" Column="1" />
+      <File FileName="VoilaMobileApp/Src/ViewModels/LoginPageViewModel.cs" Line="14" Column="9" />
+      <File FileName="VoilaMobileApp/Src/ViewModels/RegisterPageViewModel.cs" Line="16" Column="10" />
+      <File FileName="VoilaMobileApp/Src/Views/RegisterPage.xaml" Line="35" Column="32" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="VoilaMobileApp" expanded="True">
+            <Node name="VoilaMobileApp" expanded="True">
+              <Node name="Src" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B64FC33C-40DA-428F-B5B1-59EBD03DA6A2" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.VoilaMobileApp PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B64FC33C-40DA-428F-B5B1-59EBD03DA6A2" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
