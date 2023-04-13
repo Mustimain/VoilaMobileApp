@@ -271,3 +271,6 @@
 /Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/bin/Debug/net7.0-ios/iossimulator-x64/Prism.dll
 /Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/bin/Debug/net7.0-ios/iossimulator-x64/Prism.DryIoc.Maui.dll
 /Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/bin/Debug/net7.0-ios/iossimulator-x64/Prism.Maui.dll
+/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/obj/Debug/net7.0-ios/iossimulator-x64/resizetizer/r/left_arrow.png
+/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/obj/Debug/net7.0-ios/iossimulator-x64/resizetizer/r/left_arrow@2x.png
+/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/obj/Debug/net7.0-ios/iossimulator-x64/resizetizer/r/left_arrow@3x.png

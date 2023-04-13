@@ -1,30 +1,24 @@
-﻿<Properties StartupConfiguration="{B29D5037-E262-4D86-A122-839E942CF06F}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/Views/RegisterPage.xaml">
+﻿<Properties StartupConfiguration="{B29D5037-E262-4D86-A122-839E942CF06F}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Platforms/Android/CustomControls/DatePickerMapper.cs">
     <Files>
-      <File FileName="VoilaMobileApp/MauiProgram.cs" Line="11" Column="47" />
-      <File FileName="VoilaMobileApp/MainPage.xaml" Line="5" Column="1" />
-      <File FileName="VoilaMobileApp/Src/ViewModels/LoginPageViewModel.cs" Line="14" Column="9" />
-      <File FileName="VoilaMobileApp/Src/ViewModels/RegisterPageViewModel.cs" Line="16" Column="10" />
-      <File FileName="VoilaMobileApp/Src/Views/RegisterPage.xaml" Line="35" Column="32" />
+      <File FileName="VoilaMobileApp/Src/Views/RegisterPage.xaml" Line="46" Column="75" />
+      <File FileName="VoilaMobileApp/Platforms/Android/CustomControls/DatePickerMapper.cs" Line="35" Column="46" />
+      <File FileName="VoilaMobileApp/Src/CustomControls/CustomEntry.cs" Line="17" Column="1" />
+      <File FileName="VoilaMobileApp/Src/CustomControls/CustomDatePicker.cs" Line="25" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="VoilaMobileApp" expanded="True">
-            <Node name="VoilaMobileApp" expanded="True">
-              <Node name="Src" expanded="True" />
-            </Node>
-          </Node>
+          <Node name="VoilaMobileApp" expanded="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B64FC33C-40DA-428F-B5B1-59EBD03DA6A2" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.VoilaMobileApp PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B64FC33C-40DA-428F-B5B1-59EBD03DA6A2" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.VoilaMobileApp Xamarin.HotReload.UnhandledDeviceException.VoilaMobileApp.HideInfoBar="True" PreferredExecutionTarget="Android.Pixel_4_API_33" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.26" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_33" />
 </Properties>

@@ -3,40 +3,69 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VoilaMobileApp.Src.Views.LoginPage"
              xmlns:prism ="http://prismlibrary.com"
+             xmlns:custom="clr-namespace:VoilaMobileApp.Src.CustomControls"
              prism:ViewModelLocator.AutowireViewModel="Automatic"
              Title="LoginPage">
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+    <ContentPage.Content>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+        <VerticalStackLayout BackgroundColor="White" >
 
-            <Label
-                Text="Login Page!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+            <Grid BackgroundColor="White" Margin="10" HeightRequest="35">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ImageButton HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" Source="left_arrow.svg"  HeightRequest="16" WidthRequest="20" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0"></ImageButton>
+                <Label TextColor="{x:StaticResource CustomBrown}" FontSize="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" Text="Giriş Yap"></Label>
+            </Grid>
+            <ScrollView>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Center"
-                Command="{Binding ButtonClick}"/>
+                <StackLayout BackgroundColor="Transparent" VerticalOptions="FillAndExpand">
+
+
+                    <Label TextColor="{x:StaticResource CustomBrown}" Margin="50,90,50,50" HorizontalOptions="Center" Text="Voila" FontFamily="Arizona" FontSize="72"></Label>
+
+
+                    <VerticalStackLayout Margin="15" BackgroundColor="White" VerticalOptions="CenterAndExpand">
+
+                        <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+                            <custom:CustomEntry FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10" Keyboard="Email" Margin="10" Placeholder="Email"></custom:CustomEntry>
+                            <custom:CustomEntry FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Password"></custom:CustomEntry>
+                            <Label FontFamily="Anybody" Margin="10,5,12,20" HorizontalOptions="End" FontSize="12" Text="Şifremi Unuttum"></Label>
+                            <Button FontFamily="Anybody" BackgroundColor="{x:StaticResource CustomBrown}" FontSize="16" TextColor="White" Text="Giriş Yap" HeightRequest="50" Margin="10"></Button>
+                        </VerticalStackLayout>
+
+
+                        <VerticalStackLayout BackgroundColor="Transparent" Margin="10,50,10,0">
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Line Grid.Column="0" Grid.Row="0" HeightRequest="1" BackgroundColor="{x:StaticResource CustomBrown}"></Line>
+                                <Label FontFamily="Anybody" TextColor="{x:StaticResource CustomBrown}" Grid.Column="1" HorizontalOptions="Center"  Grid.Row="0"  Text="veya"></Label>
+                                <Line Grid.Column="2" Grid.Row="0" BackgroundColor="{x:StaticResource CustomBrown}" HeightRequest="1"></Line>
+                            </Grid>
+                            <Image Source="google_icon.png" HeightRequest="30" WidthRequest="30"  HorizontalOptions="Center" Margin="20,30,20,20" BackgroundColor="Transparent" ></Image>
+
+                        </VerticalStackLayout>
+
+                        <HorizontalStackLayout BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,30,0,0">
+                            <Label TextColor="{x:StaticResource CustomBrown}"  FontFamily="Anybody"  Text="Hesabınız yok mu?"></Label>
+                            <Label Margin="5,0,0,0" FontFamily="Anybody" TextColor="Red" Text="Kayıt Ol."></Label>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </StackLayout>
+            </ScrollView>
 
         </VerticalStackLayout>
-    </ScrollView>
+
+    </ContentPage.Content>
+
 </ContentPage>

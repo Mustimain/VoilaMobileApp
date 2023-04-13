@@ -65,6 +65,12 @@
 	  <None Remove="Src\Models\" />
 	  <None Remove="Src\Database\" />
 	  <None Remove="Src\Helpers\" />
+	  <None Remove="Resources\Images\left_arrow.svg" />
+	  <None Remove="Resources\Fonts\Arizonia-Regular.ttf" />
+	  <None Remove="Resources\Fonts\Anybody-Regular.ttf" />
+	  <None Remove="Resources\Images\google_icon.png" />
+	  <None Remove="Src\CustomControls\" />
+	  <None Remove="Platforms\Android\CustomControls\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Src\" />
@@ -75,5 +81,13 @@
 	  <Folder Include="Src\Models\" />
 	  <Folder Include="Src\Database\" />
 	  <Folder Include="Src\Helpers\" />
+	  <Folder Include="Src\CustomControls\" />
+	  <Folder Include="Platforms\Android\CustomControls\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\left_arrow.svg" />
+	  <BundleResource Include="Resources\Fonts\Arizonia-Regular.ttf" />
+	  <BundleResource Include="Resources\Fonts\Anybody-Regular.ttf" />
+	  <BundleResource Include="Resources\Images\google_icon.png" />
 	</ItemGroup>
 </Project>

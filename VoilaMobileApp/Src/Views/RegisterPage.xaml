@@ -2,41 +2,67 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism ="http://prismlibrary.com"
+             xmlns:custom="clr-namespace:VoilaMobileApp.Src.CustomControls"
              prism:ViewModelLocator.AutowireViewModel="Automatic"
              x:Class="VoilaMobileApp.Src.Views.RegisterPage"
              Title="RegisterPage">
-     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+    <ContentPage.Content>
+        <VerticalStackLayout BackgroundColor="White">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+            <Grid BackgroundColor="White" Margin="10" HeightRequest="35">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ImageButton HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" Source="left_arrow.svg"  HeightRequest="16" WidthRequest="20" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0"></ImageButton>
+                <Label TextColor="{x:StaticResource CustomBrown}" FontSize="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" Text="Kayıt Ol"></Label>
+            </Grid>
+            <ScrollView>
+                <VerticalStackLayout Margin="10,20,10,10">
+                    <Grid BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
 
-            <Label
-                Text="Register Page!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                        </Grid.ColumnDefinitions>
+                        <custom:CustomEntry  Grid.Column="0" Grid.Row="0" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Ad"></custom:CustomEntry>
+                        <custom:CustomEntry Grid.Column="1" Grid.Row="0" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Soyad"></custom:CustomEntry>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                HorizontalOptions="Center"
-                Command="{Binding ButtonClick}"/>
+                    </Grid>
 
+                    <custom:CustomEntry  FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Email"></custom:CustomEntry>
+                    <custom:CustomEntry  FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Şifre"></custom:CustomEntry>
+                    <custom:CustomEntry FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Şifre Tekrar"></custom:CustomEntry>
+                    <custom:CustomEntry  FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Telefon Numarası"></custom:CustomEntry>
+
+                    <Grid BackgroundColor="Transparent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <custom:CustomDatePicker PlaceHolder="Doğum Tarihi" MinimumDate="01/01/1900" MaximumDate="01/01/2070" CornerRadius="8" Padding="10" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1"   FontFamily="Anybody" Grid.Column="0" Grid.Row="0"  HeightRequest="50" BackgroundColor="White"  Margin="10" ></custom:CustomDatePicker>
+                        <custom:CustomPicker CornerRadius="8" Padding="10" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1"  Title="Cinsiyet" Grid.Column="1" Grid.Row="0" FontFamily="Anybody"   HeightRequest="50" BackgroundColor="White"   Margin="10" ></custom:CustomPicker>
+
+
+                    </Grid>
+                    <HorizontalStackLayout>
+                        <CheckBox VerticalOptions="Center" Color="{x:StaticResource CustomBrown}"></CheckBox>
+                        <Label VerticalOptions="Center" Text="Hizmet Şartları ve Gizlilik Politikasını kabul ediyorum."></Label>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <CheckBox VerticalOptions="Center" Color="{x:StaticResource CustomBrown}"></CheckBox>
+                        <Label VerticalOptions="Center" Text="Haber bültenimize abone ol."></Label>
+                    </HorizontalStackLayout>
+
+                    <Button FontFamily="Anybody" BackgroundColor="{x:StaticResource CustomBrown}" FontSize="16" TextColor="White" Text="Kayıt Ol" HeightRequest="50" Margin="10,30,10,10"></Button>
+                </VerticalStackLayout>
+
+            </ScrollView>
         </VerticalStackLayout>
-    </ScrollView>
+
+    </ContentPage.Content>
 </ContentPage>
