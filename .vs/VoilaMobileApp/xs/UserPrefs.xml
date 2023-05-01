@@ -1,24 +1,38 @@
 ﻿<Properties StartupConfiguration="{B29D5037-E262-4D86-A122-839E942CF06F}|Default" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.ItemProperties.VoilaMobileApp Xamarin.HotReload.UnhandledDeviceException.VoilaMobileApp.HideInfoBar="True" PreferredExecutionTarget="Android.Pixel_4_API_33" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_33" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Platforms/Android/CustomControls/DatePickerMapper.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/Views/Login/LoginPage.xaml">
     <Files>
-      <File FileName="VoilaMobileApp/Src/Views/RegisterPage.xaml" Line="46" Column="75" />
-      <File FileName="VoilaMobileApp/Platforms/Android/CustomControls/DatePickerMapper.cs" Line="35" Column="46" />
-      <File FileName="VoilaMobileApp/Src/CustomControls/CustomEntry.cs" Line="17" Column="1" />
-      <File FileName="VoilaMobileApp/Src/CustomControls/CustomDatePicker.cs" Line="25" Column="27" />
+      <File FileName="VoilaMobileApp/Src/Views/Login/LoginPage.xaml" Line="62" Column="47" />
+      <File FileName="VoilaMobileApp/Src/Views/Register/RegisterPage.xaml" Line="37" Column="58" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="VoilaMobileApp" expanded="True" />
+          <Node name="VoilaMobileApp" expanded="True">
+            <Node name="VoilaMobileApp" expanded="True">
+              <Node name="Platforms" expanded="True" />
+              <Node name="Src" expanded="True">
+                <Node name="Base" expanded="True" />
+                <Node name="ViewModels" expanded="True" />
+                <Node name="Views" expanded="True">
+                  <Node name="Login" expanded="True">
+                    <Node name="LoginPage.xaml" selected="True" />
+                  </Node>
+                  <Node name="Register" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.VoilaMobileApp Xamarin.HotReload.UnhandledDeviceException.VoilaMobileApp.HideInfoBar="True" PreferredExecutionTarget="Android.Pixel_4_API_33" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.26" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_33" />
 </Properties>
