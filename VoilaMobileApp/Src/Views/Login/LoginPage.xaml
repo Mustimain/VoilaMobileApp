@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VoilaMobileApp.Src.Views.LoginPage"
+             xmlns:prism ="http://prismlibrary.com"
+             xmlns:custom="clr-namespace:VoilaMobileApp.Src.CustomControls"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="false" 
+>
+    <ContentPage.Content>
+        <ScrollView>
+
+            <VerticalStackLayout BackgroundColor="White" >
+
+
+
+
+                <StackLayout VerticalOptions="StartAndExpand">
+
+                    <Label TextColor="Black" Margin="50,110,50,50" HorizontalOptions="Center" Text="Voila" FontFamily="Arizona" FontSize="72"></Label>
+
+                </StackLayout>
+
+
+
+                <VerticalStackLayout Margin="15" BackgroundColor="White" VerticalOptions="CenterAndExpand">
+
+                    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+                        <custom:CustomEntry PlaceholderColor="Gray" TextColor="Black" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10" Keyboard="Email" Margin="10" Placeholder="Email"></custom:CustomEntry>
+                        <custom:CustomEntry PlaceholderColor="Gray" TextColor="BlanchedAlmond" IsPassword="True" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Password"></custom:CustomEntry>
+                        <Label FontFamily="Anybody" TextColor="Black" Margin="10,5,12,20" HorizontalOptions="End" FontSize="12" Text="Şifremi Unuttum">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ForgotPassword}"></TapGestureRecognizer>
+
+                            </Label.GestureRecognizers>
+
+                        </Label>
+                        <Button FontFamily="Anybody" BackgroundColor="{x:StaticResource CustomPurple}" FontSize="16" TextColor="White" Text="Giriş Yap" HeightRequest="50" Margin="10" Command="{Binding LoginCommand}"></Button>
+                    </VerticalStackLayout>
+
+
+                    <VerticalStackLayout VerticalOptions="EndAndExpand" BackgroundColor="Transparent" Margin="10,50,10,0">
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Line Grid.Column="0" Grid.Row="0" HeightRequest="1" BackgroundColor="{x:StaticResource CustomBrown}"></Line>
+                            <Label FontFamily="Anybody" TextColor="{x:StaticResource CustomBrown}" Grid.Column="1" HorizontalOptions="Center"  Grid.Row="0"  Text="veya"></Label>
+                            <Line Grid.Column="2" Grid.Row="0" BackgroundColor="{x:StaticResource CustomBrown}" HeightRequest="1"></Line>
+                        </Grid>
+                        <Image Source="google_icon.png" HeightRequest="30" WidthRequest="30"  HorizontalOptions="Center" Margin="20,30,20,20" BackgroundColor="Transparent" ></Image>
+
+                        <HorizontalStackLayout BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="0,30,0,0">
+                            <Label TextColor="{x:StaticResource CustomBrown}"  FontFamily="Anybody"  Text="Hesabınız yok mu?"></Label>
+                            <Label Margin="5,0,0,0" FontFamily="Anybody" TextColor="Red" Text="Kayıt Ol.">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding RegisterCommand}"></TapGestureRecognizer>
+
+                                </Label.GestureRecognizers>
+
+                            </Label>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+
+                </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VoilaMobileApp.Src.Views.ProfileViews.ProfilePage"
+             xmlns:vm = "clr-namespace:VoilaMobileApp.Src.ViewModels.ProfileVM"
+             x:Name="ProfileView">
+
+    <ContentPage.Content>
+        
+
+
+        <StackLayout BackgroundColor="White">
+            
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                <StackLayout Margin="20">
+                    <StackLayout Orientation="Horizontal">
+
+                        <Image Source="user_icon.svg" Margin="20" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="Transparent" ></Image>
+
+                        <StackLayout Margin="0" VerticalOptions="Center">
+                            <Label  TextColor="Black" FontAttributes="Bold" FontSize="20" Text="Mustafa Ceylan"></Label>
+                            <Label  TextColor="Black" Text="mustiartt@gmail.com"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+
+                <Grid Margin="10" HorizontalOptions="FillAndExpand" VerticalOptions="Fill" BackgroundColor="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+
+
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+
+
+                    <StackLayout Margin="0,0,20,0"  HeightRequest="50" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ProfileEditCommand}"></TapGestureRecognizer>
+
+                        </StackLayout.GestureRecognizers>
+
+
+                        <Grid HeightRequest="40" BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="7*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="edit_icon.svg" HeightRequest="30" WidthRequest="30"></Image>
+                            <Label Margin="20,0,0,0" Grid.Row="0" Grid.Column="1" FontSize="16" TextColor="Black" Text="Profil Düzenle" HorizontalOptions="Start" VerticalOptions="Center"  ></Label>
+                            <Image Source="right_arrow_icon.svg"  HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" ></Image>
+
+                        </Grid>
+
+                    </StackLayout>
+
+
+
+                    <StackLayout Margin="0,0,20,0"  HeightRequest="50" Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding AddressDetailCommand}"></TapGestureRecognizer>
+
+                        </StackLayout.GestureRecognizers>
+
+                        <Grid HeightRequest="40" BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="7*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Source="map_icon.svg" HeightRequest="30" WidthRequest="30"></Image>
+                            <Label Margin="20,0,0,0" Grid.Row="0" Grid.Column="1" FontSize="16" TextColor="Black" Text="Adreslerim" HorizontalOptions="Start" VerticalOptions="Center"  ></Label>
+                            <Image Source="right_arrow_icon.svg"  HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" ></Image>
+
+                        </Grid>
+
+                    </StackLayout>
+
+
+
+
+                    <StackLayout Margin="20,0,20,0" HeightRequest="10" VerticalOptions="Center"  BackgroundColor="Transparent" Grid.Row="2" Grid.Column="0">
+                        <Line Opacity="0.5" HeightRequest="1" BackgroundColor="Black" ></Line>
+                    </StackLayout>
+
+
+
+
+
+                    <StackLayout Margin="0,0,20,0"  HeightRequest="50" Grid.Row="3" Grid.Column="0" BackgroundColor="Transparent">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OrderDetailCommand}"></TapGestureRecognizer>
+
+                        </StackLayout.GestureRecognizers>
+
+                        <Grid HeightRequest="40" BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="7*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Source="basket_icon.svg" HeightRequest="30" WidthRequest="30"></Image>
+                            <Label Margin="20,0,0,0" Grid.Row="0" Grid.Column="1" FontSize="16" TextColor="Black" Text="Siparişlerim" HorizontalOptions="Start" VerticalOptions="Center"  ></Label>
+                            <Image Source="right_arrow_icon.svg"  HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" ></Image>
+
+                        </Grid>
+
+                    </StackLayout>
+
+
+
+                    <StackLayout Margin="0,0,20,0"  HeightRequest="50" Grid.Row="4" Grid.Column="0" BackgroundColor="Transparent">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding GiftDetailCommand}"></TapGestureRecognizer>
+
+                        </StackLayout.GestureRecognizers>
+
+                        <Grid HeightRequest="40" BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="7*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Source="gift_icon.svg" HeightRequest="30" WidthRequest="30"></Image>
+                            <Label Margin="20,0,0,0" Grid.Row="0" Grid.Column="1" FontSize="16" TextColor="Black" Text="Hediye Kartlarım" HorizontalOptions="Start" VerticalOptions="Center"  ></Label>
+                            <Image Source="right_arrow_icon.svg"  HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" ></Image>
+
+                        </Grid>
+
+                    </StackLayout>
+
+
+
+
+                    <StackLayout Margin="20,0,20,0" HeightRequest="10" VerticalOptions="Center"  BackgroundColor="Transparent" Grid.Row="5" Grid.Column="0">
+                        <Line Opacity="0.5" HeightRequest="1" BackgroundColor="Black" ></Line>
+                    </StackLayout>
+
+
+
+                    <StackLayout Margin="0,0,20,0"  HeightRequest="50" Grid.Row="6" Grid.Column="0" BackgroundColor="Transparent">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding HelpCommand}"></TapGestureRecognizer>
+
+                        </StackLayout.GestureRecognizers>
+
+                        <Grid HeightRequest="40" BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="7*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                            </Grid.ColumnDefinitions>
+                            <Image Source="info_icon.svg" HeightRequest="30" WidthRequest="30"></Image>
+                            <Label Margin="20,0,0,0" Grid.Row="0" Grid.Column="1" FontSize="16" TextColor="Black" Text="Yardım" HorizontalOptions="Start" VerticalOptions="Center"  ></Label>
+                            <Image Source="right_arrow_icon.svg"  HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" ></Image>
+                        </Grid>
+                    </StackLayout>
+
+
+
+                    <StackLayout Margin="0,0,20,0"  HeightRequest="50" Grid.Row="7" Grid.Column="0" BackgroundColor="Transparent">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding LogoutCommand}"></TapGestureRecognizer>
+
+                        </StackLayout.GestureRecognizers>
+
+                        <Grid HeightRequest="40" BackgroundColor="Transparent">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                <ColumnDefinition Width="7*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="logout_icon.svg" HeightRequest="30" WidthRequest="30"></Image>
+                            <Label TextColor="Red" Margin="20,0,0,0" Grid.Row="0" Grid.Column="1" FontSize="16"  Text="Çıkış Yap" HorizontalOptions="Start" VerticalOptions="Center"  ></Label>
+                            <Image  Source="right_arrow_icon.svg"  HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="Center"  BackgroundColor="Transparent" Grid.Row="0" Grid.Column="2" ></Image>
+                        </Grid>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
