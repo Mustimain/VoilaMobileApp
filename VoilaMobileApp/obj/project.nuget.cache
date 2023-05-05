@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9uCLLREGNdqexSvsxVDW+8psa3cOLRTAx/O+OcC0UBjg7FUL50PHZayocbsPQIql81FfoIjq4LgwV24T/Ewdxg==",
+  "dgSpecHash": "XrXHvZtcb9hOx7a0JPT6Mohx/1df2eWPYsu/oHGsWYmNA6QRY2lKaGIxSPQZMMLTqz1cuFQ6UVguW7/hRNCZXw==",
   "success": true,
   "projectFilePath": "/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/VoilaMobileApp.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,7 @@
     "/Users/musti/.nuget/packages/microsoft.extensions.logging.debug/7.0.0/microsoft.extensions.logging.debug.7.0.0.nupkg.sha512",
     "/Users/musti/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
     "/Users/musti/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
-    "/Users/musti/.nuget/packages/microsoft.maui.graphics/7.0.59/microsoft.maui.graphics.7.0.59.nupkg.sha512",
+    "/Users/musti/.nuget/packages/microsoft.maui.graphics/7.0.81/microsoft.maui.graphics.7.0.81.nupkg.sha512",
     "/Users/musti/.nuget/packages/prism.core/8.1.97/prism.core.8.1.97.nupkg.sha512",
     "/Users/musti/.nuget/packages/prism.dryioc.maui/8.1.273-pre/prism.dryioc.maui.8.1.273-pre.nupkg.sha512",
     "/Users/musti/.nuget/packages/prism.maui/8.1.273-pre/prism.maui.8.1.273-pre.nupkg.sha512",

@@ -1,4 +1,6 @@
 ﻿using System;
+using VoilaMobileApp.Src.Models.Enums;
+
 namespace VoilaMobileApp.Src.Models
 {
     public class Customer
@@ -9,7 +11,7 @@ namespace VoilaMobileApp.Src.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
-        public string Gender { get; set; }
+        public GenderType Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public DateTime RegisterDate { get; set; }
         public bool EmailVerification { get; set; }

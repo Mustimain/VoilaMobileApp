@@ -1,4 +1,10 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;
+using Prism;
+using Prism.Mvvm;
 using VoilaMobileApp.Platforms.Android.CustomControls;
 using VoilaMobileApp.Src.CustomControls;
 using VoilaMobileApp.Src.ViewModels;
@@ -6,6 +12,7 @@ using VoilaMobileApp.Src.ViewModels.BasketVM;
 using VoilaMobileApp.Src.ViewModels.GiftVM;
 using VoilaMobileApp.Src.ViewModels.HomeVM;
 using VoilaMobileApp.Src.ViewModels.MenuVM;
+using VoilaMobileApp.Src.ViewModels.PaymentVM;
 using VoilaMobileApp.Src.ViewModels.ProfileVM;
 using VoilaMobileApp.Src.Views;
 using VoilaMobileApp.Src.Views.BasketViews;
@@ -13,7 +20,11 @@ using VoilaMobileApp.Src.Views.GiftViews;
 using VoilaMobileApp.Src.Views.HomeNavigation;
 using VoilaMobileApp.Src.Views.HomeViews;
 using VoilaMobileApp.Src.Views.MenuViews;
+using VoilaMobileApp.Src.Views.PaymentViews;
 using VoilaMobileApp.Src.Views.ProfileViews;
+using VoilaMobileApp.Src.Views.ProfileViews.HelpViews;
+using VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews;
+using VoilaMobileApp.Src.Views.ProfileViews.MyOrderViews;
 
 namespace VoilaMobileApp;
 
@@ -31,16 +42,19 @@ public static class MauiProgram
             })
             .UsePrism(prism =>
             {
+
                 prism.RegisterTypes(container =>
                 {
-                    ViewModelLocationProvider.Register<LoginPage, LoginPageViewModel>();
-                    ViewModelLocationProvider.Register<RegisterPage, RegisterPageViewModel>();
-                    ViewModelLocationProvider.Register<BasketPage, BasketPageViewModel>();
-                    ViewModelLocationProvider.Register<GiftPage, GiftPageViewModel>();
-                    ViewModelLocationProvider.Register<HomePage, HomePageViewModel>();
-                    ViewModelLocationProvider.Register<FoodMenuPage, FoodMenuPageViewModel>();
-                    ViewModelLocationProvider.Register<DrinkMenuPage, DrinkMenuPageViewModel>();
-                    ViewModelLocationProvider.Register<ProfilePage, ProfilePageViewModel>();
+
+                    ViewModelLocationProvider2.Register<LoginPage, LoginPageViewModel>();
+                    ViewModelLocationProvider2.Register<RegisterPage, RegisterPageViewModel>();
+                    ViewModelLocationProvider2.Register<BasketPage, BasketPageViewModel>();
+                    ViewModelLocationProvider2.Register<GiftPage, GiftPageViewModel>();
+                    ViewModelLocationProvider2.Register<HomePage, HomePageViewModel>();
+                    ViewModelLocationProvider2.Register<ProfilePage, ProfilePageViewModel>();
+                    ViewModelLocationProvider2.Register<HomeNavigationPage, HomeNavigationPageViewModel>();
+                    ViewModelLocationProvider2.Register<MenuPage, MenuPageViewModel>();
+                    ViewModelLocationProvider2.Register<PaymentPage, PaymentPageViewModel>();
 
 
 
@@ -51,14 +65,23 @@ public static class MauiProgram
                     container.RegisterForNavigation<BasketPage, BasketPageViewModel>();
                     container.RegisterForNavigation<GiftPage, GiftPageViewModel>();
                     container.RegisterForNavigation<HomePage, HomePageViewModel>();
-                    container.RegisterForNavigation<FoodMenuPage, FoodMenuPageViewModel>();
-                    container.RegisterForNavigation<DrinkMenuPage, DrinkMenuPageViewModel>();
                     container.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();
-                    container.RegisterForNavigation<HomeNavigationPage>();
+                    container.RegisterForNavigation<HomeNavigationPage, HomeNavigationPageViewModel>();
+                    container.RegisterForNavigation<MenuPage, MenuPageViewModel>();
+                    container.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
+                    container.RegisterForNavigation<ProductsPage>();
+                    container.RegisterForNavigation<EditProfilePage>();
+                    container.RegisterForNavigation<MyAddressPage>();
+                    container.RegisterForNavigation<HelpPage>();
+                    container.RegisterForNavigation<MyOrdersPage>();
 
 
-                }).OnAppStart(nameof(HomeNavigationPage));
+
+
+                }).OnAppStart(nameof(LoginPage));
             });
+
+        builder.Services.AddSingleton<INavigationService, Prism.Navigation.PageNavigationService>();
 
         builder.Logging.AddDebug();
 

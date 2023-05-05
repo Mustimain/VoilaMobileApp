@@ -62,23 +62,53 @@ build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.L
 build_metadata.AdditionalFiles.TargetPath = Src/Views/Login/LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Src/Views/Login/LoginPage.xaml
 
-[/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/MenuViews/DrinkMenuPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.MenuViews.DrinkMenuPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Src/Views/MenuViews/DrinkMenuPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Src/Views/MenuViews/DrinkMenuPage.xaml
-
-[/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/MenuViews/FoodMenuPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.MenuViews.FoodMenuPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Src/Views/MenuViews/FoodMenuPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Src/Views/MenuViews/FoodMenuPage.xaml
-
 [/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/MenuViews/MenuPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.MenuViews.MenuPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Src/Views/MenuViews/MenuPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Src/Views/MenuViews/MenuPage.xaml
+
+[/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/MenuViews/ProductsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.MenuViews.ProductsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Src/Views/MenuViews/ProductsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Src/Views/MenuViews/ProductsPage.xaml
+
+[/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/PaymentViews/PaymentPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.PaymentViews.PaymentPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Src/Views/PaymentViews/PaymentPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Src/Views/PaymentViews/PaymentPage.xaml
+
+[/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/ProfileViews/EditProfileViews/EditProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.ProfileViews.EditProfileViews.EditProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Src/Views/ProfileViews/EditProfileViews/EditProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Src/Views/ProfileViews/EditProfileViews/EditProfilePage.xaml
+
+[/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/ProfileViews/HelpViews/HelpPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.ProfileViews.HelpViews.HelpPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Src/Views/ProfileViews/HelpViews/HelpPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Src/Views/ProfileViews/HelpViews/HelpPage.xaml
+
+[/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/ProfileViews/MyAddressViews/AddressAddPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews.AddressAddPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Src/Views/ProfileViews/MyAddressViews/AddressAddPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Src/Views/ProfileViews/MyAddressViews/AddressAddPage.xaml
+
+[/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/ProfileViews/MyAddressViews/MyAddressPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews.MyAddressPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Src/Views/ProfileViews/MyAddressViews/MyAddressPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Src/Views/ProfileViews/MyAddressViews/MyAddressPage.xaml
+
+[/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/ProfileViews/MyOrderViews/MyOrdersPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = VoilaMobileApp.Src.Views.ProfileViews.MyOrderViews.MyOrdersPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Src/Views/ProfileViews/MyOrderViews/MyOrdersPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Src/Views/ProfileViews/MyOrderViews/MyOrdersPage.xaml
 
 [/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Views/ProfileViews/ProfilePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

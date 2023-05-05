@@ -15,8 +15,8 @@
                     <ColumnDefinition Width="2*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <ImageButton HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0,0,0" Source="left_arrow.svg"  HeightRequest="16" WidthRequest="20" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Command="{Binding BackCommand}" ></ImageButton>
-                <Label TextColor="{x:StaticResource CustomBrown}" FontSize="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" Text="Kayıt Ol"></Label>
+                <ImageButton HorizontalOptions="Start" VerticalOptions="Center"  Source="left_arrow.svg"  HeightRequest="35" WidthRequest="35" BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Command="{Binding BackCommand}" ></ImageButton>
+                <Label TextColor="Black" FontSize="20" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" Text="Kayıt Ol"></Label>
             </Grid>
             <ScrollView>
                 <VerticalStackLayout Margin="10,20,10,10">
@@ -26,16 +26,16 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
 
                         </Grid.ColumnDefinitions>
-                        <custom:CustomEntry  Grid.Column="0" Grid.Row="0" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Ad"></custom:CustomEntry>
-                        <custom:CustomEntry Grid.Column="1" Grid.Row="0" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Soyad"></custom:CustomEntry>
+                        <custom:CustomEntry TextColor="Black" PlaceholderColor="Gray" Grid.Column="0" Grid.Row="0" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Ad"></custom:CustomEntry>
+                        <custom:CustomEntry TextColor="Black" PlaceholderColor="Gray" Grid.Column="1" Grid.Row="0" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Soyad"></custom:CustomEntry>
 
 
                     </Grid>
 
-                    <custom:CustomEntry  FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Email"></custom:CustomEntry>
-                    <custom:CustomEntry IsPassword="True"  FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Şifre"></custom:CustomEntry>
-                    <custom:CustomEntry IsPassword="True" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Şifre Tekrar"></custom:CustomEntry>
-                    <custom:CustomEntry  FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Telefon Numarası"></custom:CustomEntry>
+                    <custom:CustomEntry  TextColor="Black" PlaceholderColor="Gray" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Email"></custom:CustomEntry>
+                    <custom:CustomEntry TextColor="Black" PlaceholderColor="Gray" IsPassword="True"  FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Şifre"></custom:CustomEntry>
+                    <custom:CustomEntry TextColor="Black" PlaceholderColor="Gray" IsPassword="True" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Şifre Tekrar"></custom:CustomEntry>
+                    <custom:CustomEntry TextColor="Black" PlaceholderColor="Gray" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Telefon Numarası"></custom:CustomEntry>
 
                     <Grid BackgroundColor="Transparent">
                         <Grid.ColumnDefinitions>
@@ -43,22 +43,22 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
 
                         </Grid.ColumnDefinitions>
-                        <custom:CustomDatePicker PlaceHolder="Doğum Tarihi" MinimumDate="01/01/1900" MaximumDate="01/01/2070" CornerRadius="8" Padding="10" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1"   FontFamily="Anybody" Grid.Column="0" Grid.Row="0"  HeightRequest="50" BackgroundColor="White"  Margin="10" ></custom:CustomDatePicker>
-                        <custom:CustomPicker CornerRadius="8" Padding="10" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1"  Title="Cinsiyet" Grid.Column="1" Grid.Row="0" FontFamily="Anybody"   HeightRequest="50" BackgroundColor="White"   Margin="10" ></custom:CustomPicker>
+                        <custom:CustomDatePicker TextColor="Black"  PlaceHolder="Doğum Tarihi" MinimumDate="01/01/1900" MaximumDate="01/01/2070" CornerRadius="8" Padding="10" BorderColor="Black" BorderThickness="1"   FontFamily="Anybody" Grid.Column="0" Grid.Row="0"  HeightRequest="50" BackgroundColor="White"  Margin="10" ></custom:CustomDatePicker>
+                        <custom:CustomPicker CornerRadius="8" TitleColor="Gray" TextColor="Black"  Padding="10" BorderColor="Black" BorderThickness="1"  Title="Cinsiyet" Grid.Column="1" Grid.Row="0" FontFamily="Anybody"   HeightRequest="50" BackgroundColor="White"   Margin="10" ></custom:CustomPicker>
 
 
                     </Grid>
                     <HorizontalStackLayout>
-                        <CheckBox VerticalOptions="Center" Color="{x:StaticResource CustomBrown}"></CheckBox>
-                        <Label VerticalOptions="Center" Text="Hizmet Şartları ve Gizlilik Politikasını kabul ediyorum."></Label>
+                        <CheckBox  VerticalOptions="Center" Color="{x:StaticResource CustomPurple}"></CheckBox>
+                        <Label VerticalOptions="Center" TextColor="Black" Text="Hizmet Şartları ve Gizlilik Politikasını kabul ediyorum."></Label>
                     </HorizontalStackLayout>
 
                     <HorizontalStackLayout>
-                        <CheckBox VerticalOptions="Center" Color="{x:StaticResource CustomBrown}"></CheckBox>
-                        <Label VerticalOptions="Center" Text="Haber bültenimize abone ol."></Label>
+                        <CheckBox VerticalOptions="Center"  Color="{x:StaticResource CustomPurple}"></CheckBox>
+                        <Label VerticalOptions="Center" TextColor="Black" Text="Haber bültenimize abone ol."></Label>
                     </HorizontalStackLayout>
 
-                    <Button FontFamily="Anybody" BackgroundColor="{x:StaticResource CustomBrown}" FontSize="16" TextColor="White" Text="Kayıt Ol" HeightRequest="50" Margin="10,30,10,10"></Button>
+                    <Button FontFamily="Anybody"  BackgroundColor="{x:StaticResource CustomPurple}" FontSize="16" TextColor="White" Text="Kayıt Ol" HeightRequest="50" Margin="10,30,10,10"></Button>
                 </VerticalStackLayout>
 
             </ScrollView>

@@ -1,4 +1,6 @@
 ﻿using System;
+using VoilaMobileApp.Src.Models.Enums;
+
 namespace VoilaMobileApp.Src.Models
 {
     public class Order
@@ -7,7 +9,7 @@ namespace VoilaMobileApp.Src.Models
         public string CustomerId { get; set; }
         public DateTime OrderDate { get; set; }
         public double TotalPrice { get; set; }
-        public string OrderStatus { get; set; }
+        public OrderStatusType OrderStatus { get; set; }
         public string AddressId { get; set; }
         public string GiftCode { get; set; }
 

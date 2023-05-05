@@ -12,13 +12,39 @@ namespace VoilaMobileApp.Src.ViewModels
         {
         }
 
-        public ICommand RegisterCommand
+
+
+        public ICommand LoginCommand
         {
             get
             {
                 return new Command(async () =>
                 {
                     await _navigationService.NavigateAsync(nameof(HomeNavigationPage));
+
+                });
+            }
+        }
+
+        public ICommand RegisterCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await _navigationService.NavigateAsync(nameof(RegisterPage));
+
+                });
+            }
+        }
+
+        public ICommand ForgotCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    await _navigationService.NavigateAsync(nameof(RegisterPage));
 
                 });
             }

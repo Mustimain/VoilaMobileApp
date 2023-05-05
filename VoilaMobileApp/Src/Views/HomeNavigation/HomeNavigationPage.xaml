@@ -2,121 +2,139 @@
 <TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VoilaMobileApp.Src.Views.HomeNavigation.HomeNavigationPage"
+             xmlns:prism="http://prismlibrary.com"
              xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
             xmlns:hmPg="clr-namespace:VoilaMobileApp.Src.Views.HomeViews"
             xmlns:mnPg="clr-namespace:VoilaMobileApp.Src.Views.MenuViews"
             xmlns:bsPg="clr-namespace:VoilaMobileApp.Src.Views.BasketViews"
             xmlns:prfPg="clr-namespace:VoilaMobileApp.Src.Views.ProfileViews"
-            xmlns:gfPg="clr-namespace:VoilaMobileApp.Src.Views.GiftViews"
+            xmlns:profvm="clr-namespace:VoilaMobileApp.Src.ViewModels.ProfileVM"
             android:TabbedPage.ToolbarPlacement="Bottom"
-
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            BarBackgroundColor="{x:StaticResource CustomPurple}"
+            SelectedItem="White"
+            UnselectedTabColor="White"
+            x:Name="HomeNav"
             >
 
-    <NavigationPage Title="Ana Sayfa" IconImageSource="home_menu_icon.svg" >
-        <x:Arguments>
-            <hmPg:HomePage>
-                <NavigationPage.TitleView  >
-                    <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="3*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="60" ></RowDefinition>
-                        </Grid.RowDefinitions>
+    <TabbedPage.Children>
+        <NavigationPage BarTextColor="White" BarBackgroundColor="{x:StaticResource CustomPurple}" Title="Ana Sayfa" IconImageSource="home_menu_icon.svg" >
+            <x:Arguments>
+                <hmPg:HomePage>
+                    <NavigationPage.TitleView  >
+                        <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" ></RowDefinition>
+                            </Grid.RowDefinitions>
 
-                        <Label  Grid.Column="1" Grid.Row="0" Text="ANA SAYFA"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
+                            <Label  Grid.Column="1" Grid.Row="0" Text="ANA SAYFA"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
 
-                    </Grid>
+                        </Grid>
 
-                </NavigationPage.TitleView>
+                    </NavigationPage.TitleView>
 
-            </hmPg:HomePage>
+                </hmPg:HomePage>
 
-        </x:Arguments>
+            </x:Arguments>
 
-    </NavigationPage>
+        </NavigationPage>
 
-    <NavigationPage Title="Menu" IconImageSource="menu_menu_icon.svg">
-        <x:Arguments>
-            <mnPg:MenuPage>
-                <NavigationPage.TitleView >
-                    <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="3*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="60" ></RowDefinition>
-                        </Grid.RowDefinitions>
 
-                        <Label  Grid.Column="1" Grid.Row="0" Text="MENU"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
 
-                    </Grid>
+        <NavigationPage  BarTextColor="White" BarBackgroundColor="{x:StaticResource CustomPurple}" Title="Menu" IconImageSource="menu_menu_icon.svg" >
+            <x:Arguments>
+                <mnPg:MenuPage  >
 
-                </NavigationPage.TitleView>
+                    <NavigationPage.TitleView  >
+                        <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" ></RowDefinition>
+                            </Grid.RowDefinitions>
 
-            </mnPg:MenuPage>
+                            <Label  Grid.Column="1" Grid.Row="0" Text="MENU"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
 
-        </x:Arguments>
+                        </Grid>
 
-    </NavigationPage>
+                    </NavigationPage.TitleView>
 
-    <NavigationPage Title="Sepetim" IconImageSource="basket_menu_icon.svg">
-        <x:Arguments>
+                </mnPg:MenuPage>
 
-            <bsPg:BasketPage>
-                <NavigationPage.TitleView >
-                    <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="3*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="60" ></RowDefinition>
-                        </Grid.RowDefinitions>
+            </x:Arguments>
 
-                        <Label  Grid.Column="1" Grid.Row="0" Text="SEPETIM"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
+        </NavigationPage>
 
-                    </Grid>
 
-                </NavigationPage.TitleView>
 
-            </bsPg:BasketPage>
-        </x:Arguments>
 
-    </NavigationPage>
-    
- 
 
-    <NavigationPage Title="Hesabım" IconImageSource="profile_menu_icon.svg">
-        <x:Arguments>
+        <NavigationPage BarTextColor="White" BarBackgroundColor="{x:StaticResource CustomPurple}"  Title="Sepetim" IconImageSource="basket_menu_icon.svg">
+            <x:Arguments>
 
-            <prfPg:ProfilePage>
-                <NavigationPage.TitleView >
-                    <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                            <ColumnDefinition Width="3*"></ColumnDefinition>
-                            <ColumnDefinition Width="*"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="60" ></RowDefinition>
-                        </Grid.RowDefinitions>
+                <bsPg:BasketPage>
+                    <NavigationPage.TitleView >
+                        <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" ></RowDefinition>
+                            </Grid.RowDefinitions>
 
-                        <Label  Grid.Column="1" Grid.Row="0" Text="HESABIM"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
+                            <Label  Grid.Column="1" Grid.Row="0" Text="SEPETIM"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
 
-                    </Grid>
+                        </Grid>
 
-                </NavigationPage.TitleView>
+                    </NavigationPage.TitleView>
 
-            </prfPg:ProfilePage>
+                </bsPg:BasketPage>
+            </x:Arguments>
 
-        </x:Arguments>
+        </NavigationPage>
 
-    </NavigationPage>
+
+
+        <NavigationPage  BarTextColor="White" BarBackgroundColor="{x:StaticResource CustomPurple}" Title="Hesabım" IconImageSource="profile_menu_icon.svg">
+
+            <x:Arguments>
+
+                <prfPg:ProfilePage>
+
+                    <NavigationPage.TitleView >
+                        <Grid   BackgroundColor="Transparent" RowSpacing="0" ColumnSpacing="0" Margin="0,0,20,0" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="3*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" ></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Label  Grid.Column="1" Grid.Row="0" Text="HESABIM"  HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="18" ></Label>
+
+                        </Grid>
+
+                    </NavigationPage.TitleView>
+
+                </prfPg:ProfilePage>
+
+            </x:Arguments>
+
+        </NavigationPage>
+
+    </TabbedPage.Children>
+
 
 </TabbedPage>

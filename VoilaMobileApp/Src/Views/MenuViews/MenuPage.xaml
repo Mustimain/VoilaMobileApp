@@ -1,11 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VoilaMobileApp.Src.Views.MenuViews.MenuPage"
             xmlns:menu="clr-namespace:VoilaMobileApp.Src.Views.MenuViews"
+            BackgroundColor="White"
              >
-    <menu:DrinkMenuPage Title="İçecekler"></menu:DrinkMenuPage>
-    <menu:FoodMenuPage Title="Yiyecekler"></menu:FoodMenuPage>
-    
-    
-</TabbedPage>
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView >
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+
+
+                        </StackLayout>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>

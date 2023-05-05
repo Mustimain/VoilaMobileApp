@@ -1,8 +1,8 @@
 ﻿namespace VoilaMobileApp.Src.Views.MenuViews;
 
-public partial class DrinkMenuPage : ContentPage
+public partial class ProductsPage : ContentPage
 {
-	public DrinkMenuPage()
+	public ProductsPage()
 	{
 		InitializeComponent();
 	}

@@ -54,6 +54,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
+		<PackageReference Include="Prism.Maui" Version="8.1.273-pre" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -99,6 +100,14 @@
 	  <None Remove="Resources\Images\home_menu_icon.svg" />
 	  <None Remove="Resources\Images\menu_menu_icon.svg" />
 	  <None Remove="Resources\Images\profile_menu_icon.svg" />
+	  <None Remove="Src\Views\PaymentViews\" />
+	  <None Remove="Src\ViewModels\PaymentVM\" />
+	  <None Remove="Src\Converters\" />
+	  <None Remove="Src\Views\ProfileViews\MyOrderViews\" />
+	  <None Remove="Src\Views\ProfileViews\EditProfileViews\" />
+	  <None Remove="Src\Views\ProfileViews\HelpViews\" />
+	  <None Remove="Src\Views\ProfileViews\MyAddressViews\" />
+	  <None Remove="Src\Models\Enums\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Src\" />
@@ -126,6 +135,14 @@
 	  <Folder Include="Src\ViewModels\MenuVM\" />
 	  <Folder Include="Src\ViewModels\HomeVM\" />
 	  <Folder Include="Src\ViewModels\ProfileVM\" />
+	  <Folder Include="Src\Views\PaymentViews\" />
+	  <Folder Include="Src\ViewModels\PaymentVM\" />
+	  <Folder Include="Src\Converters\" />
+	  <Folder Include="Src\Views\ProfileViews\MyOrderViews\" />
+	  <Folder Include="Src\Views\ProfileViews\EditProfileViews\" />
+	  <Folder Include="Src\Views\ProfileViews\HelpViews\" />
+	  <Folder Include="Src\Views\ProfileViews\MyAddressViews\" />
+	  <Folder Include="Src\Models\Enums\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\left_arrow.svg" />

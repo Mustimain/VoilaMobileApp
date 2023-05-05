@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VoilaMobileApp.Src.Views.PaymentViews.PaymentPage"
+             xmlns:customControls="clr-namespace:VoilaMobileApp.Src.CustomControls"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="Automatic"
+             xmlns:cardConverter="clr-namespace:VoilaMobileApp.Src.Converters"
+             Title="Ödeme Yap" BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <cardConverter:CreditCardNumberValueConverter x:Key="CreditCardNumberValueConverter">
+
+
+            </cardConverter:CreditCardNumberValueConverter>
+
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <VerticalStackLayout Margin="10" BackgroundColor="Transparent">
+        <StackLayout Margin="10,40,10,10" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="Transparent">
+                <customControls:CustomPicker FontFamily="Anybody"  Margin="0,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Title="Adres seçin" TitleColor="Gray"></customControls:CustomPicker>
+                <customControls:CustomPicker FontFamily="Anybody" Margin="0,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10"  CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Title="Hediye Kartı" TitleColor="Gray"></customControls:CustomPicker>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Margin="5,10,0,0" FontFamily="Anybody" FontAttributes="Bold" TextColor="Black" Grid.Row="0" Grid.Column="0" Text="Toplam Tutar"></Label>
+                    <Label Margin="5,10,10,0" FontFamily="Anybody" FontAttributes="Bold" HorizontalOptions="EndAndExpand" TextColor="Black" Grid.Row="0" Grid.Column="1" Text="122.00 TL"></Label>
+
+                </Grid>
+
+            </StackLayout>
+
+
+            <StackLayout Padding="0,50,0,0" BackgroundColor="Transparent" VerticalOptions="CenterAndExpand" Margin="0,50,0,0">
+                <Label FontSize="Body" FontFamily="Anybody" FontAttributes="Bold" Margin="5,10,0,20" TextColor="Black" Text="Ödeme Bilgileri"></Label>
+                <customControls:CustomEntry MaxLength="16" Text="{Binding CardNo}" Keyboard="Numeric" FontFamily="Anybody" Margin="0,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Placeholder="Kart Numarası" PlaceholderColor="Gray" ></customControls:CustomEntry>
+                <customControls:CustomEntry Keyboard="Default" FontFamily="Anybody" Margin="0,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Placeholder="Kart Sahibinin İsmi" PlaceholderColor="Gray" ></customControls:CustomEntry>
+                
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <customControls:CustomEntry MaxLength="4" Keyboard="Numeric" FontFamily="Anybody" Grid.Row="0" Grid.Column="0" Margin="0,10,10,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Placeholder="Ay ve Yıl" PlaceholderColor="Gray" ></customControls:CustomEntry>
+                    <customControls:CustomEntry MaxLength="3" Keyboard="Numeric" FontFamily="Anybody" Grid.Row="0" Grid.Column="1" Margin="10,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Placeholder="Cvv" PlaceholderColor="Gray" ></customControls:CustomEntry>
+                </Grid>
+
+                <HorizontalStackLayout >
+
+                    <CheckBox HorizontalOptions="Center" Color="{x:StaticResource CustomPurple}"></CheckBox>
+                    <Label FontFamily="Anybody" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Kullanım Koşulları’nı okudum ve kabul ediyorum"></Label>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+                    <CheckBox  HorizontalOptions="Center" Color="{x:StaticResource CustomPurple}"></CheckBox>
+                    <Label FontFamily="Anbody" WidthRequest="325" VerticalOptions="Center" TextColor="Black" Text="Ön Bilgilendirme Formu ve Mesafeli Satış Sözleşmesi’ni okudum ve kabul ediyorum"></Label>
+                </HorizontalStackLayout>
+
+            </StackLayout>
+            <StackLayout BackgroundColor="Transparent"  VerticalOptions="EndAndExpand">
+
+                <Button VerticalOptions="EndAndExpand" Text="Ödemeyi Tamamla" BackgroundColor="{x:StaticResource CustomPurple}" TextColor="White" ></Button>
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

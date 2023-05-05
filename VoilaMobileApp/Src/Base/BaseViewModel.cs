@@ -1,4 +1,6 @@
 ﻿using System;
+using Prism.Navigation;
+
 namespace VoilaMobileApp.Src.Base
 {
     public class BaseViewModel : BindableBase, IPageLifecycleAware, IInitialize, INavigationAware
@@ -9,6 +11,8 @@ namespace VoilaMobileApp.Src.Base
         {
             _navigationService = navigationService;
         }
+
+
 
         public void Initialize(INavigationParameters parameters)
         {
