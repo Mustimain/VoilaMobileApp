@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{B29D5037-E262-4D86-A122-839E942CF06F}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.46" />
-  <MonoDevelop.Ide.ItemProperties.VoilaMobileApp PreferredExecutionTarget="Android.Pixel_4_API_33" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/Models/Enums/CategoryType.cs">
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_33" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/Models/Category.cs">
     <Files>
-      <File FileName="VoilaMobileApp/Src/Views/MenuViews/MenuPage.xaml" Line="10" Column="29" />
-      <File FileName="VoilaMobileApp/Src/Models/Enums/CategoryType.cs" Line="7" Column="16" />
+      <File FileName="VoilaMobileApp/Src/Views/MenuViews/MenuPage.xaml" Line="10" Column="63" />
+      <File FileName="VoilaMobileApp/Src/ViewModels/MenuVM/MenuPageViewModel.cs" Line="23" Column="32" />
+      <File FileName="VoilaMobileApp/Src/Services/Concrete/CategoryService.cs" Line="42" Column="1" />
+      <File FileName="VoilaMobileApp/Src/Models/ProductDetail.cs" Line="1" Column="1" />
+      <File FileName="VoilaMobileApp/Src/Models/Product.cs" Line="10" Column="48" />
+      <File FileName="VoilaMobileApp/Src/Models/Enums/CategoryType.cs" Line="1" Column="1" />
+      <File FileName="VoilaMobileApp/Src/Models/Category.cs" Line="10" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,14 +17,10 @@
             <Node name="VoilaMobileApp" expanded="True">
               <Node name="Src" expanded="True">
                 <Node name="Models" expanded="True">
-                  <Node name="Enums" expanded="True">
-                    <Node name="CategoryType.cs" selected="True" />
-                  </Node>
+                  <Node name="Category.cs" selected="True" />
                 </Node>
-                <Node name="Views">
-                  <Node name="ProfileViews">
-                    <Node name="HelpViews" expanded="True" />
-                  </Node>
+                <Node name="Services" expanded="True">
+                  <Node name="Concrete" expanded="True" />
                 </Node>
               </Node>
             </Node>
@@ -31,9 +29,15 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.46" />
+  <MonoDevelop.Ide.ItemProperties.VoilaMobileApp PreferredExecutionTarget="Android.Pixel_4_API_33" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Services/Concrete/CategoryService.cs" relfile="VoilaMobileApp/Src/Services/Concrete/CategoryService.cs" line="38" column="1" />
+      <Breakpoint file="/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/Src/Services/Concrete/CategoryService.cs" relfile="VoilaMobileApp/Src/Services/Concrete/CategoryService.cs" line="42" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_33" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
 </Properties>

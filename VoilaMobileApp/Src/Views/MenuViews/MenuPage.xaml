@@ -6,20 +6,46 @@
             BackgroundColor="White"
              >
     <ContentPage.Content>
-        <StackLayout>
-            <CollectionView >
+        <StackLayout Orientation="Horizontal" >
+            <CollectionView Margin="10,10,10,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never" BackgroundColor="Transparent" ItemsSource="{Binding Categories}" IsGrouped="True">
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding GroupName}"
+                               Margin="10"
+                   FontSize="Large"
+                   TextColor="Black"
+                   BackgroundColor="Transparent"
+                   FontAttributes="Bold" />
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
+                        <Frame Padding="10" Margin="10" HasShadow="True">
 
 
-                        </StackLayout>
+                            <StackLayout  HorizontalOptions="FillAndExpand" VerticalOptions="Fill" >
+
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Image Margin="0,0,10,0" HeightRequest="50" WidthRequest="50" Source="coffee_cup_icon.svg"></Image>
+                                        <Label VerticalOptions="Center" FontSize="Medium" TextColor="Black" Text="{Binding Name}"></Label>
+
+
+                                    </HorizontalStackLayout>
+
+                                </VerticalStackLayout>
+
+
+
+                            </StackLayout>
+                        </Frame>
 
                     </DataTemplate>
 
                 </CollectionView.ItemTemplate>
 
             </CollectionView>
+
 
         </StackLayout>
 

@@ -6,7 +6,7 @@ namespace VoilaMobileApp.Src.Models
     public class Category
     {
         public string Id { get; set; }
-        public string CategoryName { get; set; }
+        public string Name { get; set; }
         public CategoryType CategoryType { get; set; }
     }
 }

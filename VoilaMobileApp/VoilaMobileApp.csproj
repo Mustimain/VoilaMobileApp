@@ -55,6 +55,8 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="Prism.DryIoc.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="Prism.Maui" Version="8.1.273-pre" />
+		<PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
+		<PackageReference Include="Google.Cloud.Firestore" Version="3.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -108,6 +110,13 @@
 	  <None Remove="Src\Views\ProfileViews\HelpViews\" />
 	  <None Remove="Src\Views\ProfileViews\MyAddressViews\" />
 	  <None Remove="Src\Models\Enums\" />
+	  <None Remove="Src\Services\Interfaces\" />
+	  <None Remove="Src\Services\Concrete\" />
+	  <None Remove="Src\Database\Interfaces\" />
+	  <None Remove="Src\Database\Concrete\" />
+	  <None Remove="Src\Database\DbContext\" />
+	  <None Remove="Src\Models\GroupLists\" />
+	  <None Remove="Resources\Images\coffee_cup_icon.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Src\" />
@@ -143,6 +152,12 @@
 	  <Folder Include="Src\Views\ProfileViews\HelpViews\" />
 	  <Folder Include="Src\Views\ProfileViews\MyAddressViews\" />
 	  <Folder Include="Src\Models\Enums\" />
+	  <Folder Include="Src\Services\Interfaces\" />
+	  <Folder Include="Src\Services\Concrete\" />
+	  <Folder Include="Src\Database\Interfaces\" />
+	  <Folder Include="Src\Database\Concrete\" />
+	  <Folder Include="Src\Database\DbContext\" />
+	  <Folder Include="Src\Models\GroupLists\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\left_arrow.svg" />
@@ -176,5 +191,6 @@
 	  <BundleResource Include="Resources\Images\home_menu_icon.svg" />
 	  <BundleResource Include="Resources\Images\menu_menu_icon.svg" />
 	  <BundleResource Include="Resources\Images\profile_menu_icon.svg" />
+	  <BundleResource Include="Resources\Images\coffee_cup_icon.svg" />
 	</ItemGroup>
 </Project>

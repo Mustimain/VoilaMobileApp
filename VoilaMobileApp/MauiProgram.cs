@@ -7,6 +7,8 @@ using Prism;
 using Prism.Mvvm;
 using VoilaMobileApp.Platforms.Android.CustomControls;
 using VoilaMobileApp.Src.CustomControls;
+using VoilaMobileApp.Src.Services.Concrete;
+using VoilaMobileApp.Src.Services.Interfaces;
 using VoilaMobileApp.Src.ViewModels;
 using VoilaMobileApp.Src.ViewModels.BasketVM;
 using VoilaMobileApp.Src.ViewModels.GiftVM;
@@ -45,6 +47,8 @@ public static class MauiProgram
 
                 prism.RegisterTypes(container =>
                 {
+
+                    container.RegisterInstance(typeof(ICategoryService), new CategoryService());
 
                     ViewModelLocationProvider2.Register<LoginPage, LoginPageViewModel>();
                     ViewModelLocationProvider2.Register<RegisterPage, RegisterPageViewModel>();
