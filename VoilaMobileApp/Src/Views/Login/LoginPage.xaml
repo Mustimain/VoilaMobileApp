@@ -12,16 +12,11 @@
 
             <VerticalStackLayout BackgroundColor="White" >
 
-
-
-
                 <StackLayout VerticalOptions="StartAndExpand">
 
                     <Label TextColor="Black" Margin="50,110,50,50" HorizontalOptions="Center" Text="Voila" FontFamily="Arizona" FontSize="72"></Label>
 
                 </StackLayout>
-
-
 
                 <VerticalStackLayout Margin="15" BackgroundColor="White" VerticalOptions="CenterAndExpand">
 

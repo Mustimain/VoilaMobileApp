@@ -28,7 +28,7 @@ namespace VoilaMobileApp.Src.Services.Concrete
 
                 var dataResult = (await client.Child("Categories").OnceAsync<Category>()).Select(obj => new Category
                 {
-                    Id = obj.Key,
+                    Id = obj.Object.Id,
                     Name = obj.Object.Name,
                     CategoryType = obj.Object.CategoryType
                 }).ToList();
