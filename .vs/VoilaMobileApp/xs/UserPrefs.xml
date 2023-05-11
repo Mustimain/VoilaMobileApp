@@ -8,23 +8,37 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.VoilaMobileApp PreferredExecutionTarget="Android.Pixel_4_API_33" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/Views/Login/LoginPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/Views/BasketViews/BasketPage.xaml">
     <Files>
-      <File FileName="VoilaMobileApp/Src/Views/MenuViews/ProductsPage.xaml" Line="17" Column="1" />
-      <File FileName="VoilaMobileApp/Src/Views/Login/LoginPage.xaml" Line="20" Column="1" />
+      <File FileName="VoilaMobileApp/Src/ViewModels/BasketVM/BasketPageViewModel.cs" Line="15" Column="1" />
+      <File FileName="VoilaMobileApp/Src/Views/BasketViews/BasketPage.xaml" Line="61" Column="1" />
+      <File FileName="VoilaMobileApp/Src/Views/MenuViews/ProductsPage.xaml" Line="25" Column="127" />
+      <File FileName="VoilaMobileApp/Src/Models/Product.cs" Line="9" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VoilaMobileApp" expanded="True">
             <Node name="VoilaMobileApp" expanded="True">
+              <Node name="Platforms" expanded="True">
+                <Node name="Android" expanded="True" />
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="Images" expanded="True" />
+              </Node>
               <Node name="Src" expanded="True">
+                <Node name="Base" expanded="True" />
                 <Node name="Models" expanded="True" />
-                <Node name="Services" expanded="True" />
+                <Node name="Utilts" expanded="True" />
+                <Node name="ViewModels" expanded="True">
+                  <Node name="BasketVM" expanded="True" />
+                  <Node name="MenuVM" expanded="True" />
+                </Node>
                 <Node name="Views" expanded="True">
-                  <Node name="Login" expanded="True">
-                    <Node name="LoginPage.xaml" selected="True" />
+                  <Node name="BasketViews" expanded="True">
+                    <Node name="BasketPage.xaml" selected="True" />
                   </Node>
+                  <Node name="MenuViews" expanded="True" />
                 </Node>
               </Node>
             </Node>

@@ -14,8 +14,8 @@ namespace VoilaMobileApp.Src.ViewModels.BasketVM
         public ObservableCollection<BasketProductModel> BasketList { get { return _basketList; } set { _basketList = value; RaisePropertyChanged(); } }
 
 
-        private int _totalBasketPrice = 0;
-        public int TotalBasketPrice
+        private double _totalBasketPrice = 0;
+        public double TotalBasketPrice
         {
             get
             {
@@ -41,7 +41,7 @@ namespace VoilaMobileApp.Src.ViewModels.BasketVM
 
                 foreach (var basketProd in Utilts.BasketList.GlobalBasketList)
                 {
-                    TotalBasketPrice = (int)(TotalBasketPrice + (basketProd.ProductCount * basketProd.Product.Price));
+                    TotalBasketPrice = (double)(TotalBasketPrice + (basketProd.ProductCount * basketProd.Product.Price));
                 }
 
 
