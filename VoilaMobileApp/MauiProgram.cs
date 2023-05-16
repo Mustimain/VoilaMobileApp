@@ -50,6 +50,8 @@ public static class MauiProgram
 
                     container.RegisterInstance(typeof(ICategoryService), new CategoryService());
                     container.RegisterInstance(typeof(IProductService), new ProductService());
+                    container.RegisterInstance(typeof(ICustomerService), new CustomerService());
+
 
 
                     ViewModelLocationProvider2.Register<LoginPage, LoginPageViewModel>();
@@ -89,7 +91,6 @@ public static class MauiProgram
                 }).OnAppStart(nameof(LoginPage));
             });
 
-        builder.Services.AddSingleton<INavigationService, Prism.Navigation.PageNavigationService>();
 
         builder.Logging.AddDebug();
 

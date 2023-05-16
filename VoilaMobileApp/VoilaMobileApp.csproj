@@ -122,6 +122,7 @@
 	  <None Remove="Resources\Images\add_square_icon.svg" />
 	  <None Remove="Resources\Images\add_icon.svg" />
 	  <None Remove="Resources\Images\sub_icon.svg" />
+	  <None Remove="Src\Utilts\Results\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Src\" />
@@ -165,6 +166,7 @@
 	  <Folder Include="Src\Models\GroupLists\" />
 	  <Folder Include="Src\Utilts\" />
 	  <Folder Include="Src\Models\Interface\" />
+	  <Folder Include="Src\Utilts\Results\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\left_arrow.svg" />
