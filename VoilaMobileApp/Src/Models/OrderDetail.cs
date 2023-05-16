@@ -1,7 +1,9 @@
 ﻿using System;
+using VoilaMobileApp.Src.Models.Interface;
+
 namespace VoilaMobileApp.Src.Models
 {
-    public class OrderDetail
+    public class OrderDetail : IEntity
     {
         public Customer Customer { get; set; }
         public Order Order { get; set; }

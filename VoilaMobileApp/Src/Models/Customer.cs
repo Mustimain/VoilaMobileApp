@@ -1,9 +1,10 @@
 ﻿using System;
 using VoilaMobileApp.Src.Models.Enums;
+using VoilaMobileApp.Src.Models.Interface;
 
 namespace VoilaMobileApp.Src.Models
 {
-    public class Customer
+    public class Customer : IEntity
     {
         public string Id { get; set; }
         public string FirstName { get; set; }

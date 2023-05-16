@@ -12,23 +12,18 @@
 
             <VerticalStackLayout BackgroundColor="White" >
 
-
-
-
                 <StackLayout VerticalOptions="StartAndExpand">
 
                     <Label TextColor="Black" Margin="50,110,50,50" HorizontalOptions="Center" Text="Voila" FontFamily="Arizona" FontSize="72"></Label>
 
                 </StackLayout>
 
-
-
                 <VerticalStackLayout Margin="15" BackgroundColor="White" VerticalOptions="CenterAndExpand">
 
                     <VerticalStackLayout VerticalOptions="CenterAndExpand">
 
-                        <custom:CustomEntry PlaceholderColor="Gray" TextColor="Black" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10" Keyboard="Email" Margin="10" Placeholder="Email"></custom:CustomEntry>
-                        <custom:CustomEntry PlaceholderColor="Gray" TextColor="BlanchedAlmond" IsPassword="True" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Password"></custom:CustomEntry>
+                        <custom:CustomEntry Text="{Binding Email}" PlaceholderColor="Gray" TextColor="Black" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10" Keyboard="Email" Margin="10" Placeholder="Email"></custom:CustomEntry>
+                        <custom:CustomEntry Text="{Binding Password}" PlaceholderColor="Gray" TextColor="Black" IsPassword="True" FontFamily="Anybody" BorderColor="{x:StaticResource CustomBrown}" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Password"></custom:CustomEntry>
                         <Label FontFamily="Anybody" TextColor="Black" Margin="10,5,12,20" HorizontalOptions="End" FontSize="12" Text="Şifremi Unuttum">
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ForgotPassword}"></TapGestureRecognizer>

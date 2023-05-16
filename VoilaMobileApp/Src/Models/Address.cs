@@ -1,7 +1,9 @@
 ﻿using System;
+using VoilaMobileApp.Src.Models.Interface;
+
 namespace VoilaMobileApp.Src.Models
 {
-    public class Address
+    public class Address : IEntity
     {
         public string Id { get; set; }
         public string CustomerId { get; set; }

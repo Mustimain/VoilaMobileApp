@@ -117,6 +117,12 @@
 	  <None Remove="Src\Database\DbContext\" />
 	  <None Remove="Src\Models\GroupLists\" />
 	  <None Remove="Resources\Images\coffee_cup_icon.svg" />
+	  <None Remove="Src\Utilts\" />
+	  <None Remove="Src\Models\Interface\" />
+	  <None Remove="Resources\Images\add_square_icon.svg" />
+	  <None Remove="Resources\Images\add_icon.svg" />
+	  <None Remove="Resources\Images\sub_icon.svg" />
+	  <None Remove="Src\Utilts\Results\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Src\" />
@@ -158,6 +164,9 @@
 	  <Folder Include="Src\Database\Concrete\" />
 	  <Folder Include="Src\Database\DbContext\" />
 	  <Folder Include="Src\Models\GroupLists\" />
+	  <Folder Include="Src\Utilts\" />
+	  <Folder Include="Src\Models\Interface\" />
+	  <Folder Include="Src\Utilts\Results\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\left_arrow.svg" />
@@ -192,5 +201,8 @@
 	  <BundleResource Include="Resources\Images\menu_menu_icon.svg" />
 	  <BundleResource Include="Resources\Images\profile_menu_icon.svg" />
 	  <BundleResource Include="Resources\Images\coffee_cup_icon.svg" />
+	  <BundleResource Include="Resources\Images\add_square_icon.svg" />
+	  <BundleResource Include="Resources\Images\add_icon.svg" />
+	  <BundleResource Include="Resources\Images\sub_icon.svg" />
 	</ItemGroup>
 </Project>
