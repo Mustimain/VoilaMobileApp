@@ -57,6 +57,7 @@
 		<PackageReference Include="Prism.Maui" Version="8.1.273-pre" />
 		<PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
 		<PackageReference Include="Google.Cloud.Firestore" Version="3.3.0" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="5.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -123,6 +124,8 @@
 	  <None Remove="Resources\Images\add_icon.svg" />
 	  <None Remove="Resources\Images\sub_icon.svg" />
 	  <None Remove="Src\Utilts\Results\" />
+	  <None Remove="Src\ViewModels\ProfileVM\EditProfile\" />
+	  <None Remove="Src\ViewModels\ProfileVM\Address\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Src\" />
@@ -167,6 +170,8 @@
 	  <Folder Include="Src\Utilts\" />
 	  <Folder Include="Src\Models\Interface\" />
 	  <Folder Include="Src\Utilts\Results\" />
+	  <Folder Include="Src\ViewModels\ProfileVM\EditProfile\" />
+	  <Folder Include="Src\ViewModels\ProfileVM\Address\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\left_arrow.svg" />

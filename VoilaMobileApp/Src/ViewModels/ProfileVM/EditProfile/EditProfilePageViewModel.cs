@@ -1,49 +1,35 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Prism.Navigation;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using VoilaMobileApp.Src.Base;
 using VoilaMobileApp.Src.Models;
 using VoilaMobileApp.Src.Models.Enums;
 using VoilaMobileApp.Src.Services.Interfaces;
 using VoilaMobileApp.Src.Utilts.Results;
-using VoilaMobileApp.Src.Views;
 
-namespace VoilaMobileApp.Src.ViewModels
+namespace VoilaMobileApp.Src.ViewModels.ProfileVM.EditProfile
 {
-    public class RegisterPageViewModel : BaseViewModel, IPageLifecycleAware
+    public class EditProfilePageViewModel : BaseViewModel, IPageLifecycleAware, INavigationAware
     {
         private readonly ICustomerService _customerService;
-        private readonly IPageDialogService _pageDialogService;
-        public RegisterPageViewModel(INavigationService navigationService, ICustomerService customerService, IPageDialogService pageDialogService) : base(navigationService)
+        public EditProfilePageViewModel(INavigationService navigationService, ICustomerService customerService) : base(navigationService)
         {
             _customerService = customerService;
-            _pageDialogService = pageDialogService;
         }
-
-        #region LifecycleMethods
-
-        public void OnAppearing()
-        {
-            GenderList.Add(GenderType.Erkek);
-            GenderList.Add(GenderType.Kadın);
-            GenderList.Add(GenderType.Diğer);
-        }
-
-        #endregion
 
         #region Properties
-
-        private ObservableCollection<GenderType> _genderList = new ObservableCollection<GenderType>();
-        public ObservableCollection<GenderType> GenderList
+        private Customer _currentCustomer;
+        public Customer CurrentCustomer
         {
             get
             {
-                return _genderList;
+                return _currentCustomer;
             }
             set
             {
-                _genderList = value; RaisePropertyChanged();
+                _currentCustomer = value; RaisePropertyChanged();
             }
         }
 
@@ -87,32 +73,6 @@ namespace VoilaMobileApp.Src.ViewModels
             }
         }
 
-        private string _password;
-        public string Password
-        {
-            get
-            {
-                return _password;
-            }
-            set
-            {
-                _password = value; RaisePropertyChanged();
-            }
-        }
-
-        private string _rePassword;
-        public string RePassword
-        {
-            get
-            {
-                return _rePassword;
-            }
-            set
-            {
-                _rePassword = value; RaisePropertyChanged();
-            }
-        }
-
         private string _phoneNumber;
         public string PhoneNumber
         {
@@ -139,7 +99,7 @@ namespace VoilaMobileApp.Src.ViewModels
             }
         }
 
-        private GenderType _gender = GenderType.Diğer;
+        private GenderType _gender;
         public GenderType Gender
         {
             get
@@ -152,85 +112,101 @@ namespace VoilaMobileApp.Src.ViewModels
             }
         }
 
-
         #endregion
 
-        #region Commands
-
-
-        public ICommand BackCommand
+        private ObservableCollection<GenderType> _genderList = new ObservableCollection<GenderType>();
+        public ObservableCollection<GenderType> GenderList
         {
             get
             {
-                return new Command(async () =>
-                {
-                    await _navigationService.GoBackAsync();
-
-                });
+                return _genderList;
+            }
+            set
+            {
+                _genderList = value; RaisePropertyChanged();
             }
         }
 
+        public void OnAppearing()
+        {
+            GenderList.Add(GenderType.Erkek);
+            GenderList.Add(GenderType.Kadın);
+            GenderList.Add(GenderType.Diğer);
 
-        public ICommand RegisterCommand
+            if (Utilts.CustomerInfo.CurrentCustomer != null)
+            {
+                CurrentCustomer = Utilts.CustomerInfo.CurrentCustomer;
+                FirstName = CurrentCustomer.FirstName;
+                LastName = CurrentCustomer.LastName;
+                Email = CurrentCustomer.Email;
+                BirthDate = CurrentCustomer.BirthDate;
+                Gender = CurrentCustomer.Gender;
+                PhoneNumber = CurrentCustomer.PhoneNumber;
+
+
+            }
+        }
+
+        public void OnNavigatedTo(INavigationParameters navigationParameters)
+        {
+
+        }
+
+        public ICommand UpdateProfileCommand
         {
             get
             {
                 return new Command(async () =>
                 {
-                    var newCustomer = new Customer
+                    var newCust = new Customer
                     {
-                        Id = Guid.NewGuid().ToString(),
+                        Id = Utilts.CustomerInfo.CurrentCustomer.Id,
                         FirstName = FirstName,
                         LastName = LastName,
+                        PhoneNumber = PhoneNumber,
                         Email = Email,
-                        Password = Password,
                         BirthDate = BirthDate,
                         Gender = Gender,
-                        PhoneNumber = PhoneNumber,
-                        RegisterDate = DateTime.Now,
                         EmailVerification = false,
-                        PhoneVerification = false
+                        Password = Utilts.CustomerInfo.CurrentCustomer.Password,
+                        PhoneVerification = false,
+                        RegisterDate = Utilts.CustomerInfo.CurrentCustomer.RegisterDate
+
                     };
 
-                    var res = CustomerValidation(newCustomer);
-
-                    if (res.Status == true)
+                    var validateCustomer = CustomerValidation(newCust);
+                    if (validateCustomer.Status)
                     {
-                        var result = await _customerService.RegisterCustomerAsync(newCustomer);
+                        var result = await _customerService.UpdateCustomerAsync(newCust);
 
                         if (result)
                         {
-                            await _pageDialogService.DisplayAlertAsync("Başarılı", "Başarıyla kayıt oldunuz", "tamam");
-                            await _navigationService.NavigateAsync(nameof(LoginPage));
+                            await Toast.Make("Bilgileriniz başarıyla güncellendi.").Show();
+                            var customer = await _customerService.GetCustomerByEmailAsync(CurrentCustomer.Email);
+                            Utilts.CustomerInfo.CurrentCustomer = customer;
                         }
                         else
                         {
-                            await _pageDialogService.DisplayAlertAsync("Başarısız", "Sistemsel bir hata oluştu daha sonra tekrar deneyiniz.", "tamam");
+                            await Toast.Make("Bilgileriniz güncellenemedi.").Show();
 
                         }
                     }
                     else
                     {
-                        await _pageDialogService.DisplayAlertAsync("Başarısız", res.Message, "tamam");
+                        await Toast.Make(validateCustomer.Message, ToastDuration.Long).Show();
 
                     }
-
 
                 });
             }
         }
 
-        #endregion
-
-        #region Methods
-
         private Result CustomerValidation(Customer customer)
         {
-            if (string.IsNullOrEmpty(customer.FirstName) &&
-                string.IsNullOrEmpty(customer.LastName) &&
-                string.IsNullOrEmpty(customer.Email) &&
-                string.IsNullOrEmpty(customer.Password) &&
-                string.IsNullOrEmpty(RePassword) &&
+            if (string.IsNullOrEmpty(customer.FirstName) ||
+                string.IsNullOrEmpty(customer.LastName) ||
+                string.IsNullOrEmpty(customer.Email) ||
+                string.IsNullOrEmpty(customer.Password) ||
                 string.IsNullOrEmpty(customer.PhoneNumber)
                 )
             {
@@ -238,7 +214,7 @@ namespace VoilaMobileApp.Src.ViewModels
 
             }
 
-            if (customer.Password.Length < 7 && customer.Password.Length >= 16)
+            if (customer.Password.Length < 7 || customer.Password.Length >= 16)
             {
                 return new Result(false, "Şifre 7 karakterden küçük 16 karakterden büyük olamaz.");
             }
@@ -254,17 +230,11 @@ namespace VoilaMobileApp.Src.ViewModels
 
             }
 
-            if (customer.Password != RePassword)
-            {
-                return new Result(false, "Şifreler uyuşmuyor. Kontrol ettikten sonra tekrar Deneyin");
-
-            }
 
 
             return new Result(true);
         }
 
-        #endregion
     }
 }
 

@@ -6,6 +6,11 @@ using Android.Webkit;
 using VoilaMobileApp.Src.Base;
 using VoilaMobileApp.Src.Models;
 using VoilaMobileApp.Src.Services.Interfaces;
+using CommunityToolkit.Maui.Alerts;
+using Microsoft.Maui;
+using static System.Net.Mime.MediaTypeNames;
+using System.Threading;
+using CommunityToolkit.Maui.Core;
 
 namespace VoilaMobileApp.Src.ViewModels.MenuVM
 {
@@ -19,6 +24,7 @@ namespace VoilaMobileApp.Src.ViewModels.MenuVM
         {
             _productService = productService;
         }
+
 
 
         public async void OnNavigatedTo(INavigationParameters parameters)
@@ -38,6 +44,7 @@ namespace VoilaMobileApp.Src.ViewModels.MenuVM
             {
                 return new Command(async (object Item) =>
                 {
+
                     var prdct = Item as Product;
                     if (prdct != null)
                     {
@@ -52,6 +59,8 @@ namespace VoilaMobileApp.Src.ViewModels.MenuVM
                                 Product = prdct,
                                 ProductCount = 1
                             });
+
+                            await Toast.Make("Ürün Sepete Eklendi").Show();
 
                         }
 

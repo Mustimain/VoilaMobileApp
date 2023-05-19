@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/v9dTeXbW4Q1Prf0Kq7/4K3fekH0aiRUBILG+0l/0JGJO13QDk+LPOGjDssyzwpbNP1sfvG+D/130YZjyuSIsw==",
+  "dgSpecHash": "Jx6XyACXnZE/oEz9PJ7ExbM5AOTGCvaGs4vrmvtBx6/Kzjw7NOyZc/hQeodBuFomCqdyKi4h//mJISM6aOrctQ==",
   "success": true,
   "projectFilePath": "/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/VoilaMobileApp.csproj",
   "expectedPackageFiles": [
+    "/Users/musti/.nuget/packages/communitytoolkit.maui/5.1.0/communitytoolkit.maui.5.1.0.nupkg.sha512",
+    "/Users/musti/.nuget/packages/communitytoolkit.maui.core/5.1.0/communitytoolkit.maui.core.5.1.0.nupkg.sha512",
     "/Users/musti/.nuget/packages/dryioc.dll/5.1.0/dryioc.dll.5.1.0.nupkg.sha512",
     "/Users/musti/.nuget/packages/firebasedatabase.net/4.2.0/firebasedatabase.net.4.2.0.nupkg.sha512",
     "/Users/musti/.nuget/packages/google.api.commonprotos/2.7.0/google.api.commonprotos.2.7.0.nupkg.sha512",

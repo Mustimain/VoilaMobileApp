@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
@@ -16,6 +17,8 @@ using VoilaMobileApp.Src.ViewModels.HomeVM;
 using VoilaMobileApp.Src.ViewModels.MenuVM;
 using VoilaMobileApp.Src.ViewModels.PaymentVM;
 using VoilaMobileApp.Src.ViewModels.ProfileVM;
+using VoilaMobileApp.Src.ViewModels.ProfileVM.Address;
+using VoilaMobileApp.Src.ViewModels.ProfileVM.EditProfile;
 using VoilaMobileApp.Src.Views;
 using VoilaMobileApp.Src.Views.BasketViews;
 using VoilaMobileApp.Src.Views.GiftViews;
@@ -26,6 +29,7 @@ using VoilaMobileApp.Src.Views.PaymentViews;
 using VoilaMobileApp.Src.Views.ProfileViews;
 using VoilaMobileApp.Src.Views.ProfileViews.HelpViews;
 using VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews;
+using VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews.AddressAddViews;
 using VoilaMobileApp.Src.Views.ProfileViews.MyOrderViews;
 
 namespace VoilaMobileApp;
@@ -36,7 +40,9 @@ public static class MauiProgram
     {
         var builder = MauiApp.CreateBuilder();
         builder
-            .UseMauiApp<App>().ConfigureFonts(fonts =>
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
+            .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("Anybody-Regular.ttf", "Anybody");
                 fonts.AddFont("Arizonia-Regular.ttf", "Arizona");
@@ -51,6 +57,8 @@ public static class MauiProgram
                     container.RegisterInstance(typeof(ICategoryService), new CategoryService());
                     container.RegisterInstance(typeof(IProductService), new ProductService());
                     container.RegisterInstance(typeof(ICustomerService), new CustomerService());
+                    container.RegisterInstance(typeof(IAddressService), new AddressService());
+
 
 
 
@@ -64,7 +72,9 @@ public static class MauiProgram
                     ViewModelLocationProvider2.Register<MenuPage, MenuPageViewModel>();
                     ViewModelLocationProvider2.Register<PaymentPage, PaymentPageViewModel>();
                     ViewModelLocationProvider2.Register<ProductsPage, ProductsPageViewModel>();
-
+                    ViewModelLocationProvider2.Register<EditProfilePage, EditProfilePageViewModel>();
+                    ViewModelLocationProvider2.Register<MyAddressPage, MyAddressPageViewModel>();
+                    ViewModelLocationProvider2.Register<AddressAddPage, AddressAddPageViewModel>();
 
 
 
@@ -80,8 +90,10 @@ public static class MauiProgram
                     container.RegisterForNavigation<MenuPage, MenuPageViewModel>();
                     container.RegisterForNavigation<PaymentPage, PaymentPageViewModel>();
                     container.RegisterForNavigation<ProductsPage, ProductsPageViewModel>();
-                    container.RegisterForNavigation<EditProfilePage>();
-                    container.RegisterForNavigation<MyAddressPage>();
+                    container.RegisterForNavigation<EditProfilePage, EditProfilePageViewModel>();
+                    container.RegisterForNavigation<MyAddressPage, MyAddressPageViewModel>();
+                    container.RegisterForNavigation<AddressAddPage, AddressAddPageViewModel>();
+
                     container.RegisterForNavigation<HelpPage>();
                     container.RegisterForNavigation<MyOrdersPage>();
 

@@ -51,6 +51,10 @@
         "net7.0-android33.0": {
           "targetAlias": "net7.0-android",
           "dependencies": {
+            "CommunityToolkit.Maui": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
             "FirebaseDatabase.net": {
               "target": "Package",
               "version": "[4.2.0, )"
@@ -185,6 +189,10 @@
         "net7.0-ios16.1": {
           "targetAlias": "net7.0-ios",
           "dependencies": {
+            "CommunityToolkit.Maui": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
             "FirebaseDatabase.net": {
               "target": "Package",
               "version": "[4.2.0, )"
@@ -264,6 +272,10 @@
         "net7.0-maccatalyst16.1": {
           "targetAlias": "net7.0-maccatalyst",
           "dependencies": {
+            "CommunityToolkit.Maui": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
             "FirebaseDatabase.net": {
               "target": "Package",
               "version": "[4.2.0, )"

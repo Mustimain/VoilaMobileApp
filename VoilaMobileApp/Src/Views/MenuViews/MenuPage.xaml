@@ -8,18 +8,19 @@
              >
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal" >
-            <CollectionView SelectionMode="Single" SelectedItem="{Binding SelectionCategory}" SelectionChangedCommand="{Binding ProductDetailCommand}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never" BackgroundColor="Transparent" ItemsSource="{Binding Categories}" IsGrouped="True">
+            <CollectionView Margin="0,20,0,0" SelectionMode="Single" SelectedItem="{Binding SelectionCategory}" SelectionChangedCommand="{Binding ProductDetailCommand}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" HorizontalScrollBarVisibility="Never" BackgroundColor="Transparent" ItemsSource="{Binding Categories}" IsGrouped="True">
                 <CollectionView.GroupHeaderTemplate>
                     <DataTemplate>
                         <VerticalStackLayout>
 
                             <Label Text="{Binding GroupName}"
                                Margin="10"
-                   FontSize="Large"
+                               FontFamily="Anybody"
+                   FontSize="Medium"
                    TextColor="Black"
                    BackgroundColor="Transparent"
                    FontAttributes="Bold" />
-                            <Line Margin="10,0,10,10" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Line>
+                            <Line Margin="10,0,10,20" HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Line>
                         </VerticalStackLayout>
 
                     </DataTemplate>
@@ -31,7 +32,7 @@
                             <VerticalStackLayout>
                                 <HorizontalStackLayout>
                                     <Image Margin="0,0,10,0" HeightRequest="50" WidthRequest="50" Source="coffee_cup_icon.svg"></Image>
-                                    <Label VerticalOptions="Center" FontSize="Medium" TextColor="Black" Text="{Binding Name}"></Label>
+                                    <Label FontFamily="Anybody" VerticalOptions="Center" FontSize="Body" TextColor="Black" Text="{Binding Name}"></Label>
 
 
                                 </HorizontalStackLayout>

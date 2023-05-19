@@ -72,7 +72,7 @@ namespace VoilaMobileApp.Src.ViewModels
                             }
                             else
                             {
-                                await _pageDialogService.DisplayAlertAsync("Hata", "Girilen bilgiler eksik veya yanlış. Tekrar deneyin.", "Tamam");
+                                await _pageDialogService.DisplayAlertAsync("Hata", "Sistemsel hata oluştu. Tekrar deneyin.", "Tamam");
 
                             }
                         }
@@ -125,7 +125,7 @@ namespace VoilaMobileApp.Src.ViewModels
 
             if (password.Length < 7 || password.Length >= 16)
             {
-                return new Result(false, "Şifrenin karakter uzunluğu 7 den küçük 16 dan fazla olamaz.");
+                return new Result(false, "Girilen bilgiler eksik veya yanlış. Tekrar deneyin.");
             }
 
 

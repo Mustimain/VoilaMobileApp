@@ -2,8 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews.AddressAddViews.AddressAddPage"
-             Title="Address Ekle" BackgroundColor="White">
-    <VerticalStackLayout>
-   
+             Title="Address Ekle" BackgroundColor="White"
+             xmlns:custom = "clr-namespace:VoilaMobileApp.Src.CustomControls"
+             >
+    <VerticalStackLayout Margin="10">
+        <custom:CustomEntry  Text="{Binding AddressTitle}"  TextColor="Black" PlaceholderColor="Gray" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Adres Başlığı"></custom:CustomEntry>
+        <custom:CustomEntry  Text="{Binding City}"  TextColor="Black" PlaceholderColor="Gray" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Şehir"></custom:CustomEntry>
+        <custom:CustomEntry Text="{Binding District}"  TextColor="Black" PlaceholderColor="Gray" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="İlçe"></custom:CustomEntry>
+        <custom:CustomEntry  Text="{Binding OpenAddress}"  TextColor="Black" PlaceholderColor="Gray" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" Placeholder="Açık Adres"></custom:CustomEntry>
+        <Button Margin="10" Text="Kaydet" TextColor="White" FontSize="Subtitle" Command="{Binding AddAddressCommand}"></Button>
     </VerticalStackLayout>
 </ContentPage>
