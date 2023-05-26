@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Android.Webkit;
 using VoilaMobileApp.Src.Base;
 using VoilaMobileApp.Src.Models;
+using VoilaMobileApp.Src.Views.PaymentViews;
 
 namespace VoilaMobileApp.Src.ViewModels.BasketVM
 {
@@ -89,6 +90,23 @@ namespace VoilaMobileApp.Src.ViewModels.BasketVM
                     {
                         Utilts.BasketList.GlobalBasketList.Where(pr => pr.Product.Id == currProdcut.Product.Id).Select(p => { p.ProductCount = p.ProductCount + -1; return p; }).ToList();
                         RefreshData();
+                    }
+
+                });
+            }
+        }
+
+
+        public ICommand GoToPaymentPageCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+
+                    if (Utilts.BasketList.GlobalBasketList.Count > 0)
+                    {
+                        await _navigationService.NavigateAsync(nameof(PaymentPage));
                     }
 
                 });

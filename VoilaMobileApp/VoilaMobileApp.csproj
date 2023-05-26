@@ -81,12 +81,10 @@
 	  <None Remove="Src\Views\HomeViews\" />
 	  <None Remove="Src\Views\MenuViews\" />
 	  <None Remove="Src\Views\BasketViews\" />
-	  <None Remove="Src\Views\GiftViews\" />
 	  <None Remove="Src\Views\ProfileViews\" />
 	  <None Remove="Src\ViewModels\LoginVM\" />
 	  <None Remove="Src\ViewModels\RegisterVM\" />
 	  <None Remove="Src\ViewModels\BasketVM\" />
-	  <None Remove="Src\ViewModels\GiftVM\" />
 	  <None Remove="Src\ViewModels\MenuVM\" />
 	  <None Remove="Src\ViewModels\HomeVM\" />
 	  <None Remove="Src\ViewModels\ProfileVM\" />
@@ -126,6 +124,9 @@
 	  <None Remove="Src\Utilts\Results\" />
 	  <None Remove="Src\ViewModels\ProfileVM\EditProfile\" />
 	  <None Remove="Src\ViewModels\ProfileVM\Address\" />
+	  <None Remove="Src\Views\ProfileViews\GiftCardViews\" />
+	  <None Remove="Src\ViewModels\ProfileVM\GiftVM\" />
+	  <None Remove="Src\ViewModels\ProfileVM\MyOrdersVM\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Src\" />
@@ -144,12 +145,10 @@
 	  <Folder Include="Src\Views\HomeViews\" />
 	  <Folder Include="Src\Views\MenuViews\" />
 	  <Folder Include="Src\Views\BasketViews\" />
-	  <Folder Include="Src\Views\GiftViews\" />
 	  <Folder Include="Src\Views\ProfileViews\" />
 	  <Folder Include="Src\ViewModels\LoginVM\" />
 	  <Folder Include="Src\ViewModels\RegisterVM\" />
 	  <Folder Include="Src\ViewModels\BasketVM\" />
-	  <Folder Include="Src\ViewModels\GiftVM\" />
 	  <Folder Include="Src\ViewModels\MenuVM\" />
 	  <Folder Include="Src\ViewModels\HomeVM\" />
 	  <Folder Include="Src\ViewModels\ProfileVM\" />
@@ -172,6 +171,9 @@
 	  <Folder Include="Src\Utilts\Results\" />
 	  <Folder Include="Src\ViewModels\ProfileVM\EditProfile\" />
 	  <Folder Include="Src\ViewModels\ProfileVM\Address\" />
+	  <Folder Include="Src\Views\ProfileViews\GiftCardViews\" />
+	  <Folder Include="Src\ViewModels\ProfileVM\GiftVM\" />
+	  <Folder Include="Src\ViewModels\ProfileVM\MyOrdersVM\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\left_arrow.svg" />

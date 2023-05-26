@@ -4,7 +4,7 @@
              x:Class="VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews.MyAddressPage"
               BackgroundColor="White">
     <NavigationPage.TitleView>
-
+        
         <AbsoluteLayout HorizontalOptions="FillAndExpand" >
 
             <Label AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0,0.5" HorizontalOptions="Center" VerticalOptions="Center" Text="Adreslerim" TextColor="White"  FontSize="20" ></Label>

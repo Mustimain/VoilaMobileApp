@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VoilaMobileApp.Src.Views.HomeViews.HomePage"
-             BackgroundColor="White"
-             >
-    <VerticalStackLayout >
-        <Label
-            TextColor="Black"
-            Text="Ana Sayfaya Hoşgeldiniz!"
+             x:Class="VoilaMobileApp.Src.Views.ProfileViews.GiftCardViews.GiftCardAddPage"
+             Title="Hediye Kartı Oluştur">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>

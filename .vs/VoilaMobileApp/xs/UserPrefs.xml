@@ -1,47 +1,27 @@
 ﻿<Properties StartupConfiguration="{B29D5037-E262-4D86-A122-839E942CF06F}|Default" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.VoilaMobileApp PreferredExecutionTarget="Android.Pixel_4_API_33" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/ViewModels/ProfileVM/EditProfile/EditProfilePageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/App.xaml">
     <Files>
-      <File FileName="VoilaMobileApp/Src/ViewModels/ProfileVM/EditProfile/EditProfilePageViewModel.cs" Line="206" Column="60" />
-      <File FileName="VoilaMobileApp/Src/Views/ProfileViews/EditProfileViews/EditProfilePage.xaml" />
+      <File FileName="VoilaMobileApp/App.xaml" Line="8" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VoilaMobileApp" expanded="True">
             <Node name="VoilaMobileApp" expanded="True">
-              <Node name="Src" expanded="True">
-                <Node name="Models" expanded="True" />
-                <Node name="ViewModels" expanded="True">
-                  <Node name="BasketVM" expanded="True" />
-                  <Node name="LoginVM" expanded="True" />
-                  <Node name="MenuVM" expanded="True" />
-                  <Node name="ProfileVM" expanded="True">
-                    <Node name="EditProfile" expanded="True">
-                      <Node name="EditProfilePageViewModel.cs" selected="True" />
-                    </Node>
-                  </Node>
-                  <Node name="RegisterVM" expanded="True" />
-                </Node>
-                <Node name="Views" expanded="True">
-                  <Node name="ProfileViews" expanded="True">
-                    <Node name="EditProfileViews" expanded="True" />
-                  </Node>
-                  <Node name="Register" expanded="True" />
-                </Node>
-              </Node>
+              <Node name="App.xaml" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_33" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.emulator-5554" />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.46" />
+  <MonoDevelop.Ide.ItemProperties.VoilaMobileApp PreferredExecutionTarget="Android.Pixel_4_API_33" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>

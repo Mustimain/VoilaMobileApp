@@ -226,11 +226,11 @@ namespace VoilaMobileApp.Src.ViewModels
 
         private Result CustomerValidation(Customer customer)
         {
-            if (string.IsNullOrEmpty(customer.FirstName) &&
-                string.IsNullOrEmpty(customer.LastName) &&
-                string.IsNullOrEmpty(customer.Email) &&
-                string.IsNullOrEmpty(customer.Password) &&
-                string.IsNullOrEmpty(RePassword) &&
+            if (string.IsNullOrEmpty(customer.FirstName) ||
+                string.IsNullOrEmpty(customer.LastName) ||
+                string.IsNullOrEmpty(customer.Email) ||
+                string.IsNullOrEmpty(customer.Password) ||
+                string.IsNullOrEmpty(RePassword) ||
                 string.IsNullOrEmpty(customer.PhoneNumber)
                 )
             {
@@ -238,7 +238,7 @@ namespace VoilaMobileApp.Src.ViewModels
 
             }
 
-            if (customer.Password.Length < 7 && customer.Password.Length >= 16)
+            if (customer.Password.Length < 7 || customer.Password.Length >= 16)
             {
                 return new Result(false, "Şifre 7 karakterden küçük 16 karakterden büyük olamaz.");
             }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Jx6XyACXnZE/oEz9PJ7ExbM5AOTGCvaGs4vrmvtBx6/Kzjw7NOyZc/hQeodBuFomCqdyKi4h//mJISM6aOrctQ==",
+  "dgSpecHash": "2vhghCH6xiXo2w9ZhvWqjJyWJ1E583uOD2uCY+I1MeIWChkkuBuguaNDLoBkXBZlNBJafWeGEURFqINhCGAH9A==",
   "success": true,
   "projectFilePath": "/Users/musti/Desktop/Projects/Maui/VoilaApp/VoilaMobileApp/VoilaMobileApp/VoilaMobileApp.csproj",
   "expectedPackageFiles": [
@@ -35,7 +35,7 @@
     "/Users/musti/.nuget/packages/microsoft.extensions.logging.debug/7.0.0/microsoft.extensions.logging.debug.7.0.0.nupkg.sha512",
     "/Users/musti/.nuget/packages/microsoft.extensions.options/7.0.0/microsoft.extensions.options.7.0.0.nupkg.sha512",
     "/Users/musti/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
-    "/Users/musti/.nuget/packages/microsoft.maui.graphics/7.0.81/microsoft.maui.graphics.7.0.81.nupkg.sha512",
+    "/Users/musti/.nuget/packages/microsoft.maui.graphics/7.0.86/microsoft.maui.graphics.7.0.86.nupkg.sha512",
     "/Users/musti/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/Users/musti/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/musti/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512",

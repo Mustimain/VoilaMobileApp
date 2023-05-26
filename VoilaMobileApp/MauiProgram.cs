@@ -19,6 +19,8 @@ using VoilaMobileApp.Src.ViewModels.PaymentVM;
 using VoilaMobileApp.Src.ViewModels.ProfileVM;
 using VoilaMobileApp.Src.ViewModels.ProfileVM.Address;
 using VoilaMobileApp.Src.ViewModels.ProfileVM.EditProfile;
+using VoilaMobileApp.Src.ViewModels.ProfileVM.GiftVM;
+using VoilaMobileApp.Src.ViewModels.ProfileVM.MyOrdersVM;
 using VoilaMobileApp.Src.Views;
 using VoilaMobileApp.Src.Views.BasketViews;
 using VoilaMobileApp.Src.Views.GiftViews;
@@ -27,6 +29,7 @@ using VoilaMobileApp.Src.Views.HomeViews;
 using VoilaMobileApp.Src.Views.MenuViews;
 using VoilaMobileApp.Src.Views.PaymentViews;
 using VoilaMobileApp.Src.Views.ProfileViews;
+using VoilaMobileApp.Src.Views.ProfileViews.GiftCardViews;
 using VoilaMobileApp.Src.Views.ProfileViews.HelpViews;
 using VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews;
 using VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews.AddressAddViews;
@@ -58,6 +61,9 @@ public static class MauiProgram
                     container.RegisterInstance(typeof(IProductService), new ProductService());
                     container.RegisterInstance(typeof(ICustomerService), new CustomerService());
                     container.RegisterInstance(typeof(IAddressService), new AddressService());
+                    container.RegisterInstance(typeof(IOrderClaimService), new OrderClaimService(new ProductService()));
+                    container.RegisterInstance(typeof(IOrderService), new OrderService(new ProductService(), new OrderClaimService(new ProductService())));
+
 
 
 
@@ -75,6 +81,8 @@ public static class MauiProgram
                     ViewModelLocationProvider2.Register<EditProfilePage, EditProfilePageViewModel>();
                     ViewModelLocationProvider2.Register<MyAddressPage, MyAddressPageViewModel>();
                     ViewModelLocationProvider2.Register<AddressAddPage, AddressAddPageViewModel>();
+                    ViewModelLocationProvider2.Register<GiftCardAddPage, GiftCardAddViewModel>();
+                    ViewModelLocationProvider2.Register<MyOrdersPage, MyOrdersPageViewModel>();
 
 
 
@@ -93,9 +101,11 @@ public static class MauiProgram
                     container.RegisterForNavigation<EditProfilePage, EditProfilePageViewModel>();
                     container.RegisterForNavigation<MyAddressPage, MyAddressPageViewModel>();
                     container.RegisterForNavigation<AddressAddPage, AddressAddPageViewModel>();
+                    container.RegisterForNavigation<GiftCardAddPage, GiftCardAddViewModel>();
+                    container.RegisterForNavigation<MyOrdersPage, MyOrdersPageViewModel>();
+
 
                     container.RegisterForNavigation<HelpPage>();
-                    container.RegisterForNavigation<MyOrdersPage>();
 
 
 
