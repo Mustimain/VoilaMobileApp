@@ -2,11 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VoilaMobileApp.Src.Views.ProfileViews.GiftCardViews.GiftCardAddPage"
-             Title="Hediye Kartı Oluştur">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             xmlns:custom = "clr-namespace:VoilaMobileApp.Src.CustomControls"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+             Title="Hediye Kartı Ekle" BackgroundColor="White"
+             >
+    <VerticalStackLayout Margin="10">
+        <Label TextColor="Black" Text="Hediye Tutarı" Margin="15,10,10,0"></Label>
+        <custom:CustomEntry  Text="{Binding GiftAmount}" Keyboard="Numeric"  TextColor="Black" PlaceholderColor="Gray" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10" MaxLength="3" Margin="10" ></custom:CustomEntry>
+        <Label TextColor="Black" Text="Hediye Kodu" Margin="15,10,10,0"></Label>
+
+        <custom:CustomEntry  Text="{Binding GiftCode}" MaxLength="15" TextColor="Black" PlaceholderColor="Gray" FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" ></custom:CustomEntry>
+        <Label TextColor="Black" Text="Son Kullanım Tarihi" Margin="15,10,10,0"></Label>
+
+        <custom:CustomDatePicker MinimumDate="{x:Static sys:DateTime.Now}" Date="{Binding GiftLastUseDate}" PlaceHolder="Son Kullanım Tarihi" TextColor="Black"  FontFamily="Anybody" BorderColor="Black" BorderThickness="1" CornerRadius="8" HeightRequest="50" BackgroundColor="White" Padding="10"  Margin="10" ></custom:CustomDatePicker>
+        <Button Margin="10,30,10,10" Text="Kaydet" TextColor="White" FontSize="Subtitle" BackgroundColor="{x:StaticResource CustomPurple}" Command="{Binding SaveCommand}"></Button>
     </VerticalStackLayout>
 </ContentPage>

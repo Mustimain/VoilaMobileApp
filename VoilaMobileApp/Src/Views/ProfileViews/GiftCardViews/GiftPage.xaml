@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VoilaMobileApp.Src.Views.GiftViews.GiftPage"
+             BackgroundColor="White"
             >
     <NavigationPage.TitleView>
-        
+
         <AbsoluteLayout HorizontalOptions="FillAndExpand" >
 
             <Label AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0,0.5" HorizontalOptions="Center" VerticalOptions="Center" Text="Hediye Kartlarım" TextColor="White"  FontSize="20" ></Label>
@@ -14,12 +15,20 @@
 
 
     </NavigationPage.TitleView>
-    <VerticalStackLayout>
-        <CollectionView Margin="10" EmptyView="Mevcut Hediye kartı Bulunamadı...">
+    <VerticalStackLayout BackgroundColor="White">
+        <CollectionView BackgroundColor="Transparent" ItemsSource="{Binding GiftCardList}" Margin="10" EmptyView="Mevcut Hediye kartı Bulunamadı...">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="Hello"></Label>
+                    <Frame BorderColor="{x:StaticResource CustomPurple}" Padding="5" Margin="10">
 
+                        <VerticalStackLayout Padding="5">
+
+                            <Label TextColor="Black" Text="{Binding GiftCode,StringFormat='Hediye Kodu: {0:}'}"></Label>
+                            <Label Margin="0,5,0,0"  TextColor="Black" Text="{Binding GiftAmount,StringFormat='Hediye Tutarı: {0:0.00} TL'}"></Label>
+                            <Label Margin="0,5,0,0"  TextColor="Black" Text="{Binding LastUseDate,StringFormat='Son Kullanma Tarihi: {0:dd.MM.yyyy}'}"></Label>
+
+                        </VerticalStackLayout>
+                    </Frame>
                 </DataTemplate>
 
             </CollectionView.ItemTemplate>

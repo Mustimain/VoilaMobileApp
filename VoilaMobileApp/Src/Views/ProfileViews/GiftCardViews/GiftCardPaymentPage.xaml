@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VoilaMobileApp.Src.Views.ProfileViews.GiftCardViews.GiftCardPaymentPage"
+             xmlns:customControls="clr-namespace:VoilaMobileApp.Src.CustomControls"
+             Title="Ödeme Yap" BackgroundColor="White">
+    <ScrollView VerticalScrollBarVisibility="Never" Margin="10,0,10,0">
+
+
+        <VerticalStackLayout Margin="10" BackgroundColor="Transparent">
+
+
+            <StackLayout Padding="0,20,0,0" BackgroundColor="Transparent" VerticalOptions="StartAndExpand" Margin="0,0,0,0">
+                <Grid Margin="0,0,0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Margin="5,10,0,0" FontFamily="Anybody" FontAttributes="Bold" TextColor="Black" Grid.Row="0" Grid.Column="0" Text="Toplam Tutar"></Label>
+                    <Label Margin="5,10,10,0" FontFamily="Anybody" FontAttributes="Bold" HorizontalOptions="EndAndExpand" TextColor="Black" Grid.Row="0" Grid.Column="1" Text="{Binding TotalBasketPrice, StringFormat='{0:0.00} ₺'}"></Label>
+
+                </Grid>
+
+                <customControls:CustomEntry Text="{Binding CardNo}" MaxLength="16"  Keyboard="Numeric" FontFamily="Anybody" Margin="0,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Placeholder="Kart Numarası" PlaceholderColor="Gray" ></customControls:CustomEntry>
+                <customControls:CustomEntry Text="{Binding CardOwnerName}" Keyboard="Default" FontFamily="Anybody" Margin="0,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Placeholder="Kart Sahibinin İsmi" PlaceholderColor="Gray" ></customControls:CustomEntry>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <customControls:CustomEntry Text="{Binding CardDayMonth}"  MaxLength="4" Keyboard="Numeric" FontFamily="Anybody" Grid.Row="0" Grid.Column="0" Margin="0,10,10,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Placeholder="Ay ve Yıl" PlaceholderColor="Gray" ></customControls:CustomEntry>
+                    <customControls:CustomEntry Text="{Binding CardCvv}"  MaxLength="3" Keyboard="Numeric" FontFamily="Anybody" Grid.Row="0" Grid.Column="1" Margin="10,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Placeholder="Cvv" PlaceholderColor="Gray" ></customControls:CustomEntry>
+                </Grid>
+
+                <HorizontalStackLayout >
+
+                    <CheckBox HorizontalOptions="Center" Color="{x:StaticResource CustomPurple}"></CheckBox>
+                    <Label FontFamily="Anybody" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" Text="Kullanım Koşulları’nı okudum ve kabul ediyorum"></Label>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+                    <CheckBox  HorizontalOptions="Center" Color="{x:StaticResource CustomPurple}"></CheckBox>
+                    <Label FontFamily="Anbody" WidthRequest="325" VerticalOptions="Center" TextColor="Black" Text="Ön Bilgilendirme Formu ve Mesafeli Satış Sözleşmesi’ni okudum ve kabul ediyorum"></Label>
+                </HorizontalStackLayout>
+
+            </StackLayout>
+            <StackLayout BackgroundColor="Transparent"  Margin="0,20,0,0">
+
+                <Button Command="{Binding ComplatePaymentCommand}" VerticalOptions="EndAndExpand" Text="Ödemeyi Tamamla" BackgroundColor="{x:StaticResource CustomPurple}" TextColor="White" ></Button>
+
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

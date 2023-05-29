@@ -9,17 +9,8 @@
 
 
         <VerticalStackLayout>
-            <CollectionView Margin="0,20,0,20" BackgroundColor="Transparent" MaximumHeightRequest="500"  ItemsSource="{Binding BasketList}"  >
-                <CollectionView.EmptyView>
-                    <ContentView>
-                        <HorizontalStackLayout  HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent" >
-                            <Label FontFamily="Anybody"  HorizontalOptions="Start" VerticalOptions="Start" TextColor="Black" Text="Sepetinizde ürün bulunamadı..."></Label>
-
-                        </HorizontalStackLayout>
-
-                    </ContentView>
-
-                </CollectionView.EmptyView>
+            <CollectionView EmptyView="Sepetinizde ürün bulunamadı..." Margin="0,20,0,20" BackgroundColor="Transparent" MaximumHeightRequest="500"  ItemsSource="{Binding BasketList}"  >
+        
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10" HorizontalOptions="Fill" VerticalOptions="Fill">

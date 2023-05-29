@@ -45,11 +45,11 @@
 
                                 </Grid.ColumnDefinitions>
 
-                                <Label Grid.Row="0" Grid.Column="0" TextColor="Black" Text="Adres Başlığı:"></Label>
-                                <Label Grid.Row="0" Grid.Column="1" TextColor="Black"  Text="{Binding AddressTitle}"></Label>
+                                <Label   Grid.Row="0" Grid.Column="0" TextColor="Black" Text="Adres Başlığı:"></Label>
+                                <Label   Grid.Row="0" Grid.Column="1" TextColor="Black"  Text="{Binding AddressTitle}"></Label>
 
-                                <Label Grid.Row="2" Grid.Column="0" TextColor="Black"  Text="Açık Adres:"></Label>
-                                <Label HorizontalOptions="FillAndExpand" TextColor="Black"  VerticalOptions="FillAndExpand" Grid.Column="1" Grid.Row="2" Text="{Binding OpenAddress}"></Label>
+                                <Label Margin="0,5,0,0"  Grid.Row="2" Grid.Column="0" TextColor="Black"  Text="Açık Adres:"></Label>
+                                <Label Margin="0,5,0,0"  HorizontalOptions="FillAndExpand" TextColor="Black"  VerticalOptions="FillAndExpand" Grid.Column="1" Grid.Row="2" Text="{Binding OpenAddress}"></Label>
 
 
                             </Grid>

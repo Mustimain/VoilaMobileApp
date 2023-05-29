@@ -63,6 +63,7 @@ public static class MauiProgram
                     container.RegisterInstance(typeof(IAddressService), new AddressService());
                     container.RegisterInstance(typeof(IOrderClaimService), new OrderClaimService(new ProductService()));
                     container.RegisterInstance(typeof(IOrderService), new OrderService(new ProductService(), new OrderClaimService(new ProductService())));
+                    container.RegisterInstance(typeof(IGiftService), new GiftService());
 
 
 
@@ -83,6 +84,7 @@ public static class MauiProgram
                     ViewModelLocationProvider2.Register<AddressAddPage, AddressAddPageViewModel>();
                     ViewModelLocationProvider2.Register<GiftCardAddPage, GiftCardAddViewModel>();
                     ViewModelLocationProvider2.Register<MyOrdersPage, MyOrdersPageViewModel>();
+                    ViewModelLocationProvider2.Register<GiftCardPaymentPage, GiftCardPaymentPageViewModel>();
 
 
 
@@ -103,12 +105,9 @@ public static class MauiProgram
                     container.RegisterForNavigation<AddressAddPage, AddressAddPageViewModel>();
                     container.RegisterForNavigation<GiftCardAddPage, GiftCardAddViewModel>();
                     container.RegisterForNavigation<MyOrdersPage, MyOrdersPageViewModel>();
-
+                    container.RegisterForNavigation<GiftCardPaymentPage, GiftCardPaymentPageViewModel>();
 
                     container.RegisterForNavigation<HelpPage>();
-
-
-
 
                 }).OnAppStart(nameof(LoginPage));
             });
