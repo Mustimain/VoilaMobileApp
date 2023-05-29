@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows.Input;
 using CommunityToolkit.Maui.Alerts;
+using Java.Net;
 using VoilaMobileApp.Src.Base;
 using VoilaMobileApp.Src.Services.Interfaces;
 using VoilaMobileApp.Src.Utilts.Results;
 
 namespace VoilaMobileApp.Src.ViewModels.ProfileVM.Address
 {
-    public class AddressAddPageViewModel : BaseViewModel
+    public class AddressAddPageViewModel : BaseViewModel, IPageLifecycleAware, INavigatedAware
     {
         private readonly IAddressService _addressService;
 
@@ -66,44 +67,140 @@ namespace VoilaMobileApp.Src.ViewModels.ProfileVM.Address
             }
         }
 
+        private string _pageTitle;
+        public string PageTitle
+        {
+            get
+            {
+                return _pageTitle;
+            }
+            set
+            {
+                _pageTitle = value; RaisePropertyChanged();
+            }
+        }
+
+        private Models.Address _updateAddress;
+        public Models.Address UpdateAddress
+        {
+            get
+            {
+                return _updateAddress;
+            }
+            set
+            {
+                _updateAddress = value; RaisePropertyChanged();
+            }
+        }
+
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            var param = parameters.ContainsKey("UpdateAddress");
+
+            if (param)
+            {
+                PageTitle = "Adres Güncelleme";
+                var currentAddress = parameters.GetValue<Models.Address>("UpdateAddress");
+                UpdateAddress = currentAddress;
+                AddressTitle = currentAddress.AddressTitle;
+                City = currentAddress.City;
+                District = currentAddress.District;
+                OpenAddress = currentAddress.District;
+
+            }
+            else
+            {
+                PageTitle = "Adres Ekleme";
+
+                UpdateAddress = null;
+
+            }
+        }
+
         public ICommand AddAddressCommand
         {
             get
             {
                 return new Command(async () =>
                 {
-                    var newAddress = new Models.Address
+
+                    if (UpdateAddress != null)
                     {
-                        Id = Guid.NewGuid().ToString(),
-                        AddressTitle = AddressTitle,
-                        City = City,
-                        CustomerId = Utilts.CustomerInfo.CurrentCustomer.Id,
-                        District = District,
-                        OpenAddress = OpenAddress
-
-                    };
-
-                    var res = AddressValidate(newAddress);
-
-                    if (res.Status)
-                    {
-                        var result = await _addressService.AddAddressAsync(newAddress);
-
-                        if (result)
+                        var upAddress = new Models.Address
                         {
-                            await Toast.Make("Kayıt başarıyla gerçekleşti").Show();
+                            Id = UpdateAddress.Id,
+                            AddressTitle = AddressTitle,
+                            City = City,
+                            CustomerId = UpdateAddress.CustomerId,
+                            District = District,
+                            OpenAddress = OpenAddress
+                        };
+
+                        var res = AddressValidate(upAddress);
+
+                        if (res.Status)
+                        {
+                            var result = await _addressService.UpdateAddressAsync(upAddress);
+
+                            if (result)
+                            {
+                                await Toast.Make("Adres başarıyla güncellendi.").Show();
+                                await _navigationService.GoBackAsync();
+                            }
+                            else
+                            {
+                                await Toast.Make("Sistemsel bir hata oluştu tekrar deneyin.").Show();
+                                await _navigationService.GoBackAsync();
+
+                            }
                         }
                         else
                         {
-                            await Toast.Make("Sistemsel bir hata oluştu tekrar deneyin.").Show();
+                            await Toast.Make(res.Message).Show();
 
                         }
+
                     }
                     else
                     {
-                        await Toast.Make(res.Message).Show();
+                        var newAddress = new Models.Address
+                        {
+                            Id = Guid.NewGuid().ToString(),
+                            AddressTitle = AddressTitle,
+                            City = City,
+                            CustomerId = Utilts.CustomerInfo.CurrentCustomer.Id,
+                            District = District,
+                            OpenAddress = OpenAddress
 
+                        };
+
+                        var res = AddressValidate(newAddress);
+
+                        if (res.Status)
+                        {
+                            var result = await _addressService.AddAddressAsync(newAddress);
+
+                            if (result)
+                            {
+                                await Toast.Make("Kayıt başarıyla gerçekleşti").Show();
+                                await _navigationService.GoBackAsync();
+
+                            }
+                            else
+                            {
+                                await Toast.Make("Sistemsel bir hata oluştu tekrar deneyin.").Show();
+                                await _navigationService.GoBackAsync();
+
+                            }
+                        }
+                        else
+                        {
+                            await Toast.Make(res.Message).Show();
+
+                        }
                     }
+
 
 
                 });

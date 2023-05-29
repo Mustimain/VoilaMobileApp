@@ -40,7 +40,7 @@ namespace VoilaMobileApp.Src.Services.Concrete
                 .OnceAsync<Customer>()).Where(a => a.Object.Id == addressId).FirstOrDefault();
 
                 await client
-                    .Child("Address")
+                    .Child("Address").Child(Utilts.CustomerInfo.CurrentCustomer.Id)
                     .Child(toUpdateAddress.Key)
                     .DeleteAsync();
 
@@ -103,7 +103,7 @@ namespace VoilaMobileApp.Src.Services.Concrete
                  .OnceAsync<Customer>()).Where(a => a.Object.Id == address.Id).FirstOrDefault();
 
                 await client
-                .Child("Address")
+                .Child("Address").Child(Utilts.CustomerInfo.CurrentCustomer.Id)
                 .Child(toUpdateAddress.Key)
                 .PutAsync(address);
 

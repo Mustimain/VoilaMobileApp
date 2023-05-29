@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews.AddressAddViews.AddressAddPage"
-             Title="Address Ekle" BackgroundColor="White"
+             Title="{Binding PageTitle}" BackgroundColor="White"
              xmlns:custom = "clr-namespace:VoilaMobileApp.Src.CustomControls"
              >
     <VerticalStackLayout Margin="10">

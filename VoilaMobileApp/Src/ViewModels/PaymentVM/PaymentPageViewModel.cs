@@ -196,9 +196,11 @@ namespace VoilaMobileApp.Src.ViewModels.PaymentVM
                                     ProductId = basketProduct.Product.Id
                                 });
                             }
+                            await Toast.Make("Sipariş başarıyla oluşturuldu").Show();
                         }
                         else
                         {
+                            await Toast.Make("Sipariş oluşturuken bir hata meydana geldi").Show();
 
                         }
                     }

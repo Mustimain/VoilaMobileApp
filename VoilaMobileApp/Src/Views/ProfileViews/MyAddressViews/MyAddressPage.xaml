@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VoilaMobileApp.Src.Views.ProfileViews.MyAddressViews.MyAddressPage"
-              BackgroundColor="White">
+              BackgroundColor="White"
+              x:Name="AddressPage"
+              >
     <NavigationPage.TitleView>
-        
+
         <AbsoluteLayout HorizontalOptions="FillAndExpand" >
 
             <Label AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0,0.5" HorizontalOptions="Center" VerticalOptions="Center" Text="Adreslerim" TextColor="White"  FontSize="20" ></Label>
@@ -19,29 +21,42 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
 
-                    <Frame BorderColor="{x:StaticResource CustomPurple}" Padding="5" Margin="10">
-                        <Grid BackgroundColor="Transparent" Padding="10" >
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"></RowDefinition>
-                                <RowDefinition Height="Auto"></RowDefinition>
+                    <SwipeView Margin="10" BackgroundColor="White">
+                        <SwipeView.RightItems>
+                            <SwipeItems Mode="Reveal"  SwipeBehaviorOnInvoked="Close">
+                                <SwipeItem   IconImageSource="add_icon.svg" Text="Güncelle" Command="{Binding Path= BindingContext.UpdateAddressCommand,Source={x:Reference Name=AddressPage}}" CommandParameter="{Binding .}"  BackgroundColor="LawnGreen"> </SwipeItem>
+                                
+                                <SwipeItem Text="Sil" IconImageSource="garbage_icon.svg" Command="{Binding Path= BindingContext.DeleteAddressCommand,Source={x:Reference Name=AddressPage}}" CommandParameter="{Binding .}" BackgroundColor="OrangeRed"></SwipeItem>
+                            </SwipeItems>
 
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </SwipeView.RightItems>
 
-                            </Grid.ColumnDefinitions>
+                        <Frame BorderColor="{x:StaticResource CustomPurple}"  Padding="5">
 
-                            <Label Grid.Row="0" Grid.Column="0" TextColor="Black" Text="Adres Başlığı:"></Label>
-                            <Label Grid.Row="0" Grid.Column="1" TextColor="Black"  Text="{Binding AddressTitle}"></Label>
+                            <Grid BackgroundColor="White" Padding="10"  >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
 
-                            <Label Grid.Row="2" Grid.Column="0" TextColor="Black"  Text="Açık Adres:"></Label>
-                            <Label HorizontalOptions="FillAndExpand" TextColor="Black"  VerticalOptions="FillAndExpand" Grid.Column="1" Grid.Row="2" Text="{Binding OpenAddress}"></Label>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" TextColor="Black" Text="Adres Başlığı:"></Label>
+                                <Label Grid.Row="0" Grid.Column="1" TextColor="Black"  Text="{Binding AddressTitle}"></Label>
+
+                                <Label Grid.Row="2" Grid.Column="0" TextColor="Black"  Text="Açık Adres:"></Label>
+                                <Label HorizontalOptions="FillAndExpand" TextColor="Black"  VerticalOptions="FillAndExpand" Grid.Column="1" Grid.Row="2" Text="{Binding OpenAddress}"></Label>
 
 
-                        </Grid>
+                            </Grid>
 
-                    </Frame>
+                        </Frame>
+                    </SwipeView>
+
 
 
                 </DataTemplate>

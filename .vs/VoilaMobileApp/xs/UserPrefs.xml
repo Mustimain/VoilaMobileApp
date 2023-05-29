@@ -2,23 +2,31 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/App.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/ViewModels/PaymentVM/PaymentPageViewModel.cs">
     <Files>
-      <File FileName="VoilaMobileApp/App.xaml" Line="8" Column="37" />
+      <File FileName="VoilaMobileApp/Src/ViewModels/PaymentVM/PaymentPageViewModel.cs" Line="199" Column="66" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VoilaMobileApp" expanded="True">
             <Node name="VoilaMobileApp" expanded="True">
-              <Node name="App.xaml" selected="True" />
+              <Node name="Src" expanded="True">
+                <Node name="Models" expanded="True" />
+                <Node name="Services" expanded="True" />
+                <Node name="ViewModels" expanded="True">
+                  <Node name="PaymentVM" expanded="True">
+                    <Node name="PaymentPageViewModel.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.emulator-5554" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_33" />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.46" />
   <MonoDevelop.Ide.ItemProperties.VoilaMobileApp PreferredExecutionTarget="Android.Pixel_4_API_33" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
