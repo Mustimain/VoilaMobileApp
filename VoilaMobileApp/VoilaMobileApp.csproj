@@ -75,8 +75,6 @@
 	  <None Remove="Resources\Images\google_icon.png" />
 	  <None Remove="Src\CustomControls\" />
 	  <None Remove="Platforms\Android\CustomControls\" />
-	  <None Remove="Src\Views\Login\" />
-	  <None Remove="Src\Views\Register\" />
 	  <None Remove="Src\Views\HomeNavigationPage\" />
 	  <None Remove="Src\Views\HomeViews\" />
 	  <None Remove="Src\Views\MenuViews\" />
@@ -127,6 +125,8 @@
 	  <None Remove="Src\Views\ProfileViews\GiftCardViews\" />
 	  <None Remove="Src\ViewModels\ProfileVM\GiftVM\" />
 	  <None Remove="Src\ViewModels\ProfileVM\MyOrdersVM\" />
+	  <None Remove="Src\Views\ForgetPasswordViews\" />
+	  <None Remove="Src\ViewModels\ForgotPasswordVM\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Src\" />
@@ -139,8 +139,6 @@
 	  <Folder Include="Src\Helpers\" />
 	  <Folder Include="Src\CustomControls\" />
 	  <Folder Include="Platforms\Android\CustomControls\" />
-	  <Folder Include="Src\Views\Login\" />
-	  <Folder Include="Src\Views\Register\" />
 	  <Folder Include="Src\Views\HomeNavigation\" />
 	  <Folder Include="Src\Views\HomeViews\" />
 	  <Folder Include="Src\Views\MenuViews\" />
@@ -174,6 +172,8 @@
 	  <Folder Include="Src\Views\ProfileViews\GiftCardViews\" />
 	  <Folder Include="Src\ViewModels\ProfileVM\GiftVM\" />
 	  <Folder Include="Src\ViewModels\ProfileVM\MyOrdersVM\" />
+	  <Folder Include="Src\Views\ForgetPasswordViews\" />
+	  <Folder Include="Src\ViewModels\ForgotPasswordVM\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\left_arrow.svg" />

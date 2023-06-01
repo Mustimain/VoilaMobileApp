@@ -10,6 +10,7 @@ namespace VoilaMobileApp.Src.Services.Interfaces
         Task<bool> LoginCusomterAsync(string email, string password);
         Task<Customer> GetCustomerByEmailAsync(string email);
         Task<bool> UpdateCustomerAsync(Customer customer);
+        Task<bool> CheckEmailAsync(string email);
     }
 }
 

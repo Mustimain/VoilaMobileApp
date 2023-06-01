@@ -5,6 +5,7 @@ using VoilaMobileApp.Src.Base;
 using VoilaMobileApp.Src.Services.Interfaces;
 using VoilaMobileApp.Src.Utilts.Results;
 using VoilaMobileApp.Src.Views;
+using VoilaMobileApp.Src.Views.ForgetPasswordViews;
 using VoilaMobileApp.Src.Views.HomeNavigation;
 
 namespace VoilaMobileApp.Src.ViewModels
@@ -104,13 +105,13 @@ namespace VoilaMobileApp.Src.ViewModels
             }
         }
 
-        public ICommand ForgotCommand
+        public ICommand ForgotPassword
         {
             get
             {
                 return new Command(async () =>
                 {
-                    await _navigationService.NavigateAsync(nameof(RegisterPage));
+                    await _navigationService.NavigateAsync(nameof(ForgotPasswordPage));
 
                 });
             }

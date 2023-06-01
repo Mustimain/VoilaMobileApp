@@ -12,6 +12,7 @@ using VoilaMobileApp.Src.Services.Concrete;
 using VoilaMobileApp.Src.Services.Interfaces;
 using VoilaMobileApp.Src.ViewModels;
 using VoilaMobileApp.Src.ViewModels.BasketVM;
+using VoilaMobileApp.Src.ViewModels.ForgotPasswordVM;
 using VoilaMobileApp.Src.ViewModels.GiftVM;
 using VoilaMobileApp.Src.ViewModels.HomeVM;
 using VoilaMobileApp.Src.ViewModels.MenuVM;
@@ -23,6 +24,7 @@ using VoilaMobileApp.Src.ViewModels.ProfileVM.GiftVM;
 using VoilaMobileApp.Src.ViewModels.ProfileVM.MyOrdersVM;
 using VoilaMobileApp.Src.Views;
 using VoilaMobileApp.Src.Views.BasketViews;
+using VoilaMobileApp.Src.Views.ForgetPasswordViews;
 using VoilaMobileApp.Src.Views.GiftViews;
 using VoilaMobileApp.Src.Views.HomeNavigation;
 using VoilaMobileApp.Src.Views.HomeViews;
@@ -85,6 +87,7 @@ public static class MauiProgram
                     ViewModelLocationProvider2.Register<GiftCardAddPage, GiftCardAddViewModel>();
                     ViewModelLocationProvider2.Register<MyOrdersPage, MyOrdersPageViewModel>();
                     ViewModelLocationProvider2.Register<GiftCardPaymentPage, GiftCardPaymentPageViewModel>();
+                    ViewModelLocationProvider2.Register<ForgotPasswordPage, ForgotPasswordPageViewModel>();
 
 
 
@@ -106,7 +109,7 @@ public static class MauiProgram
                     container.RegisterForNavigation<GiftCardAddPage, GiftCardAddViewModel>();
                     container.RegisterForNavigation<MyOrdersPage, MyOrdersPageViewModel>();
                     container.RegisterForNavigation<GiftCardPaymentPage, GiftCardPaymentPageViewModel>();
-
+                    container.RegisterForNavigation<ForgotPasswordPage, ForgotPasswordPageViewModel>();
                     container.RegisterForNavigation<HelpPage>();
 
                 }).OnAppStart(nameof(LoginPage));

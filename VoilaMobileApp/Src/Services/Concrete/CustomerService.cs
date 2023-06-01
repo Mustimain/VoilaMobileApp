@@ -17,6 +17,20 @@ namespace VoilaMobileApp.Src.Services.Concrete
 
         }
 
+        public async Task<bool> CheckEmailAsync(string email)
+        {
+            var allCustomer = await GetAllCustomersAsync();
+            foreach (var cus in allCustomer)
+            {
+                if (cus.Email.ToLower() == email.ToLower())
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public async Task<List<Customer>> GetAllCustomersAsync()
         {
             try
@@ -52,7 +66,7 @@ namespace VoilaMobileApp.Src.Services.Concrete
         {
 
             var customerList = await GetAllCustomersAsync();
-            var user = customerList.Where(cst => cst.Email.ToLower().Contains(email.ToLower())).FirstOrDefault();
+            var user = customerList.Where(cst => cst.Email.ToLower() == email.ToLower()).FirstOrDefault();
             if (user != null)
             {
                 return user;
