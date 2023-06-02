@@ -5,29 +5,31 @@
   <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_33" />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.46" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/Views/ForgetPasswordViews/ForgotPasswordPage.xaml">
-    <Files>
-      <File FileName="VoilaMobileApp/Src/Views/ForgetPasswordViews/ForgotPasswordPage.xaml" Line="18" Column="95" />
-      <File FileName="VoilaMobileApp/Src/ViewModels/ForgotPasswordVM/ForgotPasswordPageViewModel.cs" Line="8" Column="106" />
-      <File FileName="VoilaMobileApp/Src/Views/RegisterViews/RegisterPage.xaml" Line="6" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VoilaMobileApp" expanded="True">
             <Node name="VoilaMobileApp" expanded="True">
+              <Node name="Platforms" expanded="True">
+                <Node name="Android" expanded="True">
+                  <Node name="CustomControls" expanded="True" />
+                </Node>
+              </Node>
               <Node name="Resources" expanded="True" />
               <Node name="Src" expanded="True">
+                <Node name="Services" expanded="True">
+                  <Node name="Concrete" expanded="True">
+                    <Node name="CustomerService.cs" selected="True" />
+                  </Node>
+                  <Node name="Interfaces" expanded="True" />
+                </Node>
                 <Node name="ViewModels" expanded="True">
                   <Node name="ForgotPasswordVM" expanded="True" />
                   <Node name="LoginVM" expanded="True" />
                 </Node>
                 <Node name="Views" expanded="True">
-                  <Node name="ForgetPasswordViews" expanded="True">
-                    <Node name="ForgotPasswordPage.xaml" selected="True" />
-                  </Node>
-                  <Node name="LoginViews" expanded="True" />
-                  <Node name="RegisterViews" expanded="True" />
+                  <Node name="ForgetPasswordViews" expanded="True" />
                 </Node>
               </Node>
             </Node>

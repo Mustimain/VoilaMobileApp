@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 using Prism.Navigation;
 using VoilaMobileApp.Src.Base;
 using VoilaMobileApp.Src.Models;
@@ -192,22 +193,34 @@ namespace VoilaMobileApp.Src.ViewModels
                         PhoneVerification = false
                     };
 
+
                     var res = CustomerValidation(newCustomer);
 
                     if (res.Status == true)
                     {
-                        var result = await _customerService.RegisterCustomerAsync(newCustomer);
+                        var checkMail = await _customerService.CheckEmailAsync(Email);
 
-                        if (result)
+                        if (!checkMail)
                         {
-                            await _pageDialogService.DisplayAlertAsync("Başarılı", "Başarıyla kayıt oldunuz", "tamam");
-                            await _navigationService.NavigateAsync(nameof(LoginPage));
+                            var result = await _customerService.RegisterCustomerAsync(newCustomer);
+
+                            if (result)
+                            {
+                                await _pageDialogService.DisplayAlertAsync("Başarılı", "Başarıyla kayıt oldunuz", "tamam");
+                                await _navigationService.NavigateAsync(nameof(LoginPage));
+                            }
+                            else
+                            {
+                                await _pageDialogService.DisplayAlertAsync("Başarısız", "Sistemsel bir hata oluştu daha sonra tekrar deneyiniz.", "tamam");
+
+                            }
                         }
                         else
                         {
-                            await _pageDialogService.DisplayAlertAsync("Başarısız", "Sistemsel bir hata oluştu daha sonra tekrar deneyiniz.", "tamam");
+                            await _pageDialogService.DisplayAlertAsync("Başarısız", "Email adresi mevcut, başka mail adresi ile tekrar deneyiniz", "tamam");
 
                         }
+
                     }
                     else
                     {

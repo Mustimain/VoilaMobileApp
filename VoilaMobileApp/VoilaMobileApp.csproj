@@ -120,13 +120,12 @@
 	  <None Remove="Resources\Images\add_icon.svg" />
 	  <None Remove="Resources\Images\sub_icon.svg" />
 	  <None Remove="Src\Utilts\Results\" />
-	  <None Remove="Src\ViewModels\ProfileVM\EditProfile\" />
-	  <None Remove="Src\ViewModels\ProfileVM\Address\" />
 	  <None Remove="Src\Views\ProfileViews\GiftCardViews\" />
 	  <None Remove="Src\ViewModels\ProfileVM\GiftVM\" />
 	  <None Remove="Src\ViewModels\ProfileVM\MyOrdersVM\" />
 	  <None Remove="Src\Views\ForgetPasswordViews\" />
 	  <None Remove="Src\ViewModels\ForgotPasswordVM\" />
+	  <None Remove="Src\ViewModels\ProfileVM\HelpVM\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Src\" />
@@ -167,13 +166,12 @@
 	  <Folder Include="Src\Utilts\" />
 	  <Folder Include="Src\Models\Interface\" />
 	  <Folder Include="Src\Utilts\Results\" />
-	  <Folder Include="Src\ViewModels\ProfileVM\EditProfile\" />
-	  <Folder Include="Src\ViewModels\ProfileVM\Address\" />
 	  <Folder Include="Src\Views\ProfileViews\GiftCardViews\" />
 	  <Folder Include="Src\ViewModels\ProfileVM\GiftVM\" />
 	  <Folder Include="Src\ViewModels\ProfileVM\MyOrdersVM\" />
 	  <Folder Include="Src\Views\ForgetPasswordViews\" />
 	  <Folder Include="Src\ViewModels\ForgotPasswordVM\" />
+	  <Folder Include="Src\ViewModels\ProfileVM\HelpVM\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\left_arrow.svg" />
