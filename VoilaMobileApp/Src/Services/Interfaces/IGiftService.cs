@@ -11,6 +11,7 @@ namespace VoilaMobileApp.Src.Services.Interfaces
         Task<List<GiftCard>> GetAllGiftCardsAsync();
         Task<List<GiftCard>> GetAllMyGiftCards();
         Task<bool> CheckGiftCode(string giftCode);
+        Task<GiftCard> GetGiftCardByGiftCode(string giftCode);
 
 
 

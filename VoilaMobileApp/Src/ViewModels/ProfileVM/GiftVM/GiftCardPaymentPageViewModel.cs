@@ -123,7 +123,7 @@ namespace VoilaMobileApp.Src.ViewModels.ProfileVM.GiftVM
                         CardDayMonth = CardDayMonth,
                         CardNo = CardNo,
                         CardOwnerName = CardOwnerName,
-                        GiftCard = null,
+                        GiftCode = null,
 
                     };
                     var validatePayment = PaymentValidate(newPayment);

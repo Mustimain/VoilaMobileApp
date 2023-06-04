@@ -14,7 +14,19 @@
             <StackLayout Margin="10,10,10,10" HorizontalOptions="Fill" VerticalOptions="Fill">
                 <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="Transparent">
                     <customControls:CustomPicker ItemsSource="{Binding AddressList}" ItemDisplayBinding="{Binding AddressTitle}" SelectedItem="{Binding SelectionAddress}" FontFamily="Anybody"  Margin="0,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10" CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Title="Adres seçin" TitleColor="Gray"></customControls:CustomPicker>
-                    <customControls:CustomPicker ItemsSource="{Binding GiftCardList}" ItemDisplayBinding="{Binding GiftCode}" SelectedItem="{Binding SelectionGiftCard}" FontFamily="Anybody" Margin="0,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10"  CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" Title="Hediye Kartı" TitleColor="Gray"></customControls:CustomPicker>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <customControls:CustomEntry VerticalOptions="Center"  Grid.Row="0" Grid.Column="0" PlaceholderColor="Gray" Placeholder="Hediye Kodu" Text="{Binding GiftCode}" FontFamily="Anybody" Margin="0,10,0,10" HeightRequest="50"  TextColor="Black" Padding="10"  CornerRadius="10" BorderColor="Black" BorderThickness="1" BackgroundColor="White" ></customControls:CustomEntry>
+                        <Button Command="{Binding ApplyGiftCodeCommand}" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" Grid.Row="0" Grid.Column="1" Text="Uygula" TextColor="White" BackgroundColor="{x:StaticResource CustomPurple}" ></Button>
+                    </Grid>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"></RowDefinition>

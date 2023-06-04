@@ -100,18 +100,32 @@ namespace VoilaMobileApp.Src.Services.Concrete
             return result;
         }
 
+        public async Task<GiftCard> GetGiftCardByGiftCode(string giftCode)
+        {
+            var allGiftCards = await GetAllGiftCardsAsync();
+            foreach (var gift in allGiftCards)
+            {
+                if (gift.GiftCode.ToLower() == giftCode.ToLower())
+                {
+                    return gift;
+                }
+            }
+
+            return null;
+        }
+
         public async Task<bool> UpdateGiftCardAsync(GiftCard giftCard)
         {
             try
             {
                 var toUpdateGift = (await client
                  .Child("GiftCards")
-                 .OnceAsync<Customer>()).Where(a => a.Object.Id == giftCard.Id).FirstOrDefault();
+                 .OnceAsync<GiftCard>()).Where(a => a.Object.Id == giftCard.Id).FirstOrDefault();
 
                 await client
                 .Child("GiftCards")
                 .Child(toUpdateGift.Key)
-                .PutAsync(toUpdateGift);
+                .PutAsync(giftCard);
 
                 return true;
             }

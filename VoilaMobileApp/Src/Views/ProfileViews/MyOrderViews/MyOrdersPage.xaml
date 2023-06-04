@@ -3,37 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VoilaMobileApp.Src.Views.ProfileViews.MyOrderViews.MyOrdersPage"
              Title="Geçmiş Siparişlerim" BackgroundColor="White">
-    <VerticalStackLayout>
-        <CollectionView ItemsSource="{Binding OrderDetailList}" Margin="10" EmptyView="Mevcut sipariş bulunamadı...">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame BorderColor="{x:StaticResource CustomPurple}" Padding="5" Margin="10">
 
-                        <StackLayout Padding="10">
-                            <Label  TextColor="Black" Text="{Binding Order.TotalPrice,StringFormat='Sipariş Tutarı: {0:0.00} TL'}"></Label>
-                            <Label Margin="0,5,0,0"  TextColor="Black" Text="{Binding Order.OrderDate,StringFormat='Sipariş Tarihi: {0:dd.MM.yyyy}'}"></Label>
-                            <Label Margin="0,5,0,0"  TextColor="Black" Text="{Binding Order.OrderStatus,StringFormat='Sipari Durumu: {0:}'}"></Label>
+    <CollectionView ItemsSource="{Binding OrderDetailList}" Margin="10" EmptyView="Mevcut sipariş bulunamadı...">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame BorderColor="{x:StaticResource CustomPurple}" Padding="5" Margin="10">
 
-                            <CollectionView Margin="0,5,0,0"  ItemsSource="{Binding BasketProductModelList}">
-                                <CollectionView.ItemTemplate>
-                                    <DataTemplate>
-                                        <HorizontalStackLayout>
-                                            <Label TextColor="Black" Text="{Binding Product.Name,StringFormat='Ürün: {0:0}'}"></Label>
-                                            <Label  TextColor="Black" Text="{Binding ProductCount,StringFormat='  {0:0}X'}"></Label>
+                    <StackLayout Padding="10">
+                        <Label  TextColor="Black" Text="{Binding Order.TotalPrice,StringFormat='Sipariş Tutarı: {0:0.00} TL'}"></Label>
+                        <Label Margin="0,5,0,0"  TextColor="Black" Text="{Binding Order.OrderDate,StringFormat='Sipariş Tarihi: {0:dd.MM.yyyy}'}"></Label>
+                        <Label Margin="0,5,0,0"  TextColor="Black" Text="{Binding Order.OrderStatus,StringFormat='Sipari Durumu: {0:}'}"></Label>
 
-                                        </HorizontalStackLayout>
+                        <CollectionView Margin="0,5,0,0"  ItemsSource="{Binding BasketProductModelList}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <HorizontalStackLayout>
+                                        <Label TextColor="Black" Text="{Binding Product.Name,StringFormat='Ürün: {0:0}'}"></Label>
+                                        <Label  TextColor="Black" Text="{Binding ProductCount,StringFormat='  {0:0}X'}"></Label>
 
-                                    </DataTemplate>
+                                    </HorizontalStackLayout>
 
-                                </CollectionView.ItemTemplate>
+                                </DataTemplate>
 
-                            </CollectionView>
-                        </StackLayout>
-                    </Frame>
-                </DataTemplate>
+                            </CollectionView.ItemTemplate>
 
-            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
 
-        </CollectionView>
-    </VerticalStackLayout>
+        </CollectionView.ItemTemplate>
+
+    </CollectionView>
+
+
 </ContentPage>

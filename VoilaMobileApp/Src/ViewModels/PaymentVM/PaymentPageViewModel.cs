@@ -25,30 +25,21 @@ namespace VoilaMobileApp.Src.ViewModels.PaymentVM
             }
         }
 
-        private ObservableCollection<GiftCard> _giftCardList = new ObservableCollection<GiftCard>();
-        public ObservableCollection<GiftCard> GiftCardList
-        {
-            get
-            {
-                return _giftCardList;
-            }
-            set
-            {
-                _giftCardList = value; RaisePropertyChanged();
-            }
-        }
+
 
         private readonly IAddressService _addressService;
         private readonly IOrderService _orderService;
         private readonly IOrderClaimService _orderClaimService;
-        public PaymentPageViewModel(INavigationService navigationService, IAddressService addressService, IOrderService orderService, IOrderClaimService orderClaimService) : base(navigationService)
+        private readonly IGiftService _giftService;
+        public PaymentPageViewModel(INavigationService navigationService, IAddressService addressService, IOrderService orderService, IOrderClaimService orderClaimService, IGiftService giftService) : base(navigationService)
         {
             _addressService = addressService;
             _orderClaimService = orderClaimService;
             _orderService = orderService;
+            _giftService = giftService;
         }
 
-
+        private double amount;
         public async void OnAppearing()
         {
 
@@ -57,6 +48,7 @@ namespace VoilaMobileApp.Src.ViewModels.PaymentVM
             foreach (var basketProd in Utilts.BasketList.GlobalBasketList)
             {
                 TotalBasketPrice = (double)(TotalBasketPrice + (basketProd.ProductCount * basketProd.Product.Price));
+                amount = TotalBasketPrice;
             }
 
         }
@@ -140,16 +132,16 @@ namespace VoilaMobileApp.Src.ViewModels.PaymentVM
             }
         }
 
-        private GiftCard _selectionGiftCard;
-        public GiftCard SelectionGiftCard
+        private string _giftCode = "";
+        public string GiftCode
         {
             get
             {
-                return _selectionGiftCard;
+                return _giftCode;
             }
             set
             {
-                _selectionGiftCard = value; RaisePropertyChanged();
+                _giftCode = value; RaisePropertyChanged();
             }
         }
 
@@ -163,7 +155,7 @@ namespace VoilaMobileApp.Src.ViewModels.PaymentVM
                     var paymentDetail = new Payment
                     {
                         address = SelectionAddress,
-                        GiftCard = SelectionGiftCard,
+                        GiftCode = GiftCode,
                         CardCvv = CardCvv,
                         CardDayMonth = CardDayMonth,
                         CardNo = CardNo,
@@ -173,42 +165,86 @@ namespace VoilaMobileApp.Src.ViewModels.PaymentVM
                     var paymentValidate = PaymentValidate(paymentDetail);
                     if (paymentValidate.Status)
                     {
-                        var ordId = Guid.NewGuid().ToString();
-                        var orderResult = await _orderService.AddOrderAsync(new Order
+                        var entryGiftCard = await _giftService.GetGiftCardByGiftCode(GiftCode);
+                        if (entryGiftCard != null)
                         {
-                            Id = ordId,
-                            OrderStatus = Models.Enums.OrderStatusType.SiparişAlındı,
-                            AddressId = SelectionAddress.Id,
-                            CustomerId = Utilts.CustomerInfo.CurrentCustomer.Id,
-                            GiftCode = SelectionGiftCard?.GiftCode,
-                            OrderDate = DateTime.Now,
-                            TotalPrice = TotalBasketPrice
-                        });
-                        if (orderResult)
-                        {
-                            foreach (var basketProduct in Utilts.BasketList.GlobalBasketList)
+                            var ordId = Guid.NewGuid().ToString();
+                            var orderResult = await _orderService.AddOrderAsync(new Order
                             {
-                                await _orderClaimService.AddOrderClaim(new OrderClaim
+                                Id = ordId,
+                                OrderStatus = Models.Enums.OrderStatusType.SiparişAlındı,
+                                AddressId = SelectionAddress.Id,
+                                CustomerId = Utilts.CustomerInfo.CurrentCustomer.Id,
+                                GiftCode = GiftCode,
+                                OrderDate = DateTime.Now,
+                                TotalPrice = TotalBasketPrice
+                            });
+                            if (orderResult)
+                            {
+                                foreach (var basketProduct in Utilts.BasketList.GlobalBasketList)
                                 {
-                                    Id = Guid.NewGuid().ToString(),
-                                    NumberOfProduct = basketProduct.ProductCount,
-                                    OrderId = ordId,
-                                    ProductId = basketProduct.Product.Id
-                                });
+                                    await _orderClaimService.AddOrderClaim(new OrderClaim
+                                    {
+                                        Id = Guid.NewGuid().ToString(),
+                                        NumberOfProduct = basketProduct.ProductCount,
+                                        OrderId = ordId,
+                                        ProductId = basketProduct.Product.Id
+                                    });
+                                }
+                                entryGiftCard.IsUsed = Models.Enums.GiftStatusType.Kullanıldı;
+                                await _giftService.UpdateGiftCardAsync(entryGiftCard);
+                                await Toast.Make("Sipariş başarıyla oluşturuldu").Show();
                             }
-                            await Toast.Make("Sipariş başarıyla oluşturuldu").Show();
+                            else
+                            {
+                                await Toast.Make("Sipariş oluşturuken bir hata meydana geldi").Show();
+
+                            }
                         }
                         else
                         {
-                            await Toast.Make("Sipariş oluşturuken bir hata meydana geldi").Show();
+                            await Toast.Make("Hediye Kodu Hatalı").Show();
 
                         }
+
+
                     }
                     else
                     {
                         await Toast.Make(paymentValidate.Message).Show();
 
                     }
+                });
+            }
+        }
+
+        public ICommand ApplyGiftCodeCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    var applyGiftCard = await _giftService.GetGiftCardByGiftCode(GiftCode);
+                    if (GiftCode == "")
+                    {
+                        TotalBasketPrice = amount;
+                    }
+                    else
+                    {
+                        if (applyGiftCard != null)
+                        {
+                            TotalBasketPrice -= applyGiftCard.GiftAmount;
+                            await Toast.Make("Hediye kodu başarıyla uygulandı.").Show();
+
+                        }
+                        else
+                        {
+                            await Toast.Make("Hediye kodu hatalı veya bulunamadı.").Show();
+
+                        }
+                    }
+
+
                 });
             }
         }
