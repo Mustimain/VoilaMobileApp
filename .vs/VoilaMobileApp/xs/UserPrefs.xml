@@ -5,32 +5,18 @@
   <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_4_API_33" />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="33.0.46" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="VoilaMobileApp/Src/ViewModels/ProfileVM/HelpVM/HelpPageViewModel.cs">
+    <Files>
+      <File FileName="VoilaMobileApp/Src/Views/ProfileViews/HelpViews/HelpPage.xaml" Line="12" Column="76" />
+      <File FileName="VoilaMobileApp/Src/ViewModels/ProfileVM/HelpVM/HelpPageViewModel.cs" Line="94" Column="98" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VoilaMobileApp" expanded="True">
             <Node name="VoilaMobileApp" expanded="True">
-              <Node name="Platforms" expanded="True">
-                <Node name="Android" expanded="True">
-                  <Node name="CustomControls" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="Resources" expanded="True" />
               <Node name="Src" expanded="True">
-                <Node name="Services" expanded="True">
-                  <Node name="Concrete" expanded="True">
-                    <Node name="CustomerService.cs" selected="True" />
-                  </Node>
-                  <Node name="Interfaces" expanded="True" />
-                </Node>
-                <Node name="ViewModels" expanded="True">
-                  <Node name="ForgotPasswordVM" expanded="True" />
-                  <Node name="LoginVM" expanded="True" />
-                </Node>
-                <Node name="Views" expanded="True">
-                  <Node name="ForgetPasswordViews" expanded="True" />
-                </Node>
+                <Node name="ViewModels" selected="True" />
               </Node>
             </Node>
           </Node>

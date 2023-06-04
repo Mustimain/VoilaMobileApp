@@ -10,6 +10,8 @@ namespace VoilaMobileApp.Src.Services.Interfaces
         Task<bool> DeleteGiftCardAsync(string giftId);
         Task<List<GiftCard>> GetAllGiftCardsAsync();
         Task<List<GiftCard>> GetAllMyGiftCards();
+        Task<bool> CheckGiftCode(string giftCode);
+
 
 
     }

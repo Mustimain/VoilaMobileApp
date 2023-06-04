@@ -95,11 +95,21 @@ namespace VoilaMobileApp.Src.ViewModels.ProfileVM.GiftVM
 
                     if (validateGiftCard.Status)
                     {
-                        var navParam = new NavigationParameters
+                        var checkGiftCode = await _giftService.CheckGiftCode(GiftCode);
+                        if (!checkGiftCode)
+                        {
+                            var navParam = new NavigationParameters
                         {
                             {"buyGiftCard",newGiftCard }
                         };
-                        await _navigationService.NavigateAsync(nameof(GiftCardPaymentPage), navParam);
+                            await _navigationService.NavigateAsync(nameof(GiftCardPaymentPage), navParam);
+                        }
+                        else
+                        {
+                            await Toast.Make("Hediye kodu mevcut lütfen başka bir kod deneyiniz.").Show();
+
+                        }
+
                     }
                     else
                     {
@@ -119,6 +129,7 @@ namespace VoilaMobileApp.Src.ViewModels.ProfileVM.GiftVM
             {
                 return new Result(false, "Alanlar boş bırakılamaz.");
             }
+
             if (GiftLastUseDate <= DateTime.Now)
             {
                 return new Result(false, "Tarih bugünden küçük olamaz.");

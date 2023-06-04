@@ -33,6 +33,20 @@ namespace VoilaMobileApp.Src.Services.Concrete
             }
         }
 
+        public async Task<bool> CheckGiftCode(string giftCode)
+        {
+            var allGiftCards = await GetAllGiftCardsAsync();
+            foreach (var gift in allGiftCards)
+            {
+                if (gift.GiftCode.ToLower() == giftCode.ToLower())
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
         public async Task<bool> DeleteGiftCardAsync(string giftId)
         {
             try
